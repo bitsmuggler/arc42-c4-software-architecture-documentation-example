@@ -11,19 +11,19 @@ Tools: Structurizr DSL, Structurizr CLI & Asciidoctor
 
 ## Commands
 
-* Generate PlantUML diagrams from C4 Model (Structurizr DSL)
+### Generate PlantUML diagrams from C4 Model (Structurizr DSL)
 
 ``
 ./bin/structurizr-cli/structurizr.sh export -w bank.dsl -format plantuml/structurizr -output diagrams
 ``
 
-* Generate HTML documentation with diagrams
+### Generate HTML documentation with diagrams
 
 ``
 asciidoctor -b html5 -r asciidoctor-diagram internet-banking-system.adoc
 ``
 
-* Generate PDF documentation with diagrams
+### Generate PDF documentation with diagrams
 
 ``
 asciidoctor -b pdf -r asciidoctor-diagram -r asciidoctor-pdf  internet-banking-system.adoc
