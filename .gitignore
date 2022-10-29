@@ -1,0 +1,4 @@
+diagrams/
+bin/
+documentation/images/diag-*.png
+*.cache

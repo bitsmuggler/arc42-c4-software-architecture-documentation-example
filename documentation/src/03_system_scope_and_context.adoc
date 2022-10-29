@@ -1,0 +1,28 @@
+[[section-system-scope-and-context]]
+== System Scope and Context
+
+
+
+
+
+=== Business Context
+
+[plantuml, format=png]   
+....
+include::../../diagrams/structurizr-SystemContext.puml[]
+include::../../diagrams/structurizr-SystemContext-key.puml[]
+....
+
+**<Diagram or Table>**
+
+**<optionally: Explanation of external domain interfaces>**
+
+=== Technical Context
+
+
+
+**<Diagram or Table>**
+
+**<optionally: Explanation of technical interfaces>**
+
+**<Mapping Input/Output to Channels>**
