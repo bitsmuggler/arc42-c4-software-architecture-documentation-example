@@ -3,19 +3,20 @@ run-name: Build Software Architecture Documentation
 on: [push]
 jobs:
     compile:
-        name: Compile site assets
+        name: Build documentation
         runs-on: ubuntu-latest
         steps:
           - name: Check out the repo
             uses: actions/checkout@v2
-          - name: Run the build process with Docker
+          - name: Generate PlantUML diagrams
             uses: addnab/docker-run-action@v3
             with:
                 image: structurizr/cli:latest
+                options: $PWD:/usr/local/structurizr structurizr/cli
                 #options: -v ${{ github.workspace }}:/var/www
                 run: |
                     export -w bank.dsl -format plantuml/structurizr -output diagrams
-          - name: Run the build process with Docker
+          - name: Build documentation
             uses: addnab/docker-run-action@v3
             with:
                 image: asciidoctor/docker-asciidoctor:latest
