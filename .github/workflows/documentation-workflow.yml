@@ -22,4 +22,4 @@ jobs:
                 image: asciidoctor/docker-asciidoctor:latest
                 options: -v ${{ github.workspace }}:/documents/
                 run: |
-                    asciidoctor -b html5 -r asciidoctor-diagram  /home/runner/work/arc42-c4-software-architecture-documentation-example/documentation/internet-banking-system.adoc
+                    asciidoctor -b html5 -r asciidoctor-diagram documentation/internet-banking-system.adoc
