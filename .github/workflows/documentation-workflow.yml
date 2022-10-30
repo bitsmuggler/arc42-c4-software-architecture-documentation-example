@@ -14,6 +14,6 @@ jobs:
                 image: asciidoctor/docker-asciidoctor:latest
                 options: -v ${{ github.workspace }}:/documents/
                 run: |
-                    curl --show-error --location https://static.structurizr.com/download/structurizr-cli.zip | tar -xf - -C /documents/bin/structurizr-cli
-                    /documents/bin/structurizr-cli/structurizr.sh export -w bank.dsl -format plantuml/structurizr -output diagrams
+                    curl --show-error --location https://static.structurizr.com/download/structurizr-cli.zip | tar -xf - -C /documentsarc42-c4-software-architecture-documentation-example/bin/structurizr-cli
+                    /documents/arc42-c4-software-architecture-documentation-example/bin/structurizr-cli/structurizr.sh export -w bank.dsl -format plantuml/structurizr -output diagrams
                     asciidoctor -b html5 -r asciidoctor-diagram documentation/internet-banking-system.adoc
