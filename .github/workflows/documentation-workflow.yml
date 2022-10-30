@@ -14,7 +14,7 @@ jobs:
                 image: structurizr/cli:latest
                 options: -v ${{ github.workspace }}:/usr/local/structurizr
                 run: |
-                    export workspace=bank.dsl format=plantuml/structurizr output={{ github.workspace }}/diagrams
+                    cd /usr/local/structurizr && export workspace=bank.dsl format=plantuml/structurizr output=diagrams
           - name: Build documentation
             uses: addnab/docker-run-action@v3
             with:
