@@ -1,4 +1,4 @@
-# Software Documentation Example with arc42 and C4 Model
+# Software Architecture Documentation Example with arc42 and C4 Model
 This example shows how to use arc42 in combination with the C4 model with the Documentation as Code technique.
 
 Technologies involved:
