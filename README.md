@@ -13,9 +13,9 @@ Technologies involved:
 ## Prerequisites
 
 * Install [Asciidoctor](https://docs.asciidoctor.org/asciidoctor), [Asciidoctor Diagrams](https://docs.asciidoctor.org/diagram-extension/latest/) and [Asciidoctor PDF](https://docs.asciidoctor.org/pdf-converter/latest/)
-    * Asciidoctor: https://docs.asciidoctor.org/asciidoctor/latest/install/
-    * Asciidoctor Diagrams: https://docs.asciidoctor.org/diagram-extension/latest/
-    * Asciidoctor PDF: https://docs.asciidoctor.org/pdf-converter/latest/install/
+    * [Asciidoctor](https://docs.asciidoctor.org/asciidoctor/latest/install/)
+    * [Asciidoctor Diagrams](Diagrams: https://docs.asciidoctor.org/diagram-extension/latest/)
+    * [Asciidoctor PDF](https://docs.asciidoctor.org/pdf-converter/latest/install/)
 * Download the [structurizr-cli](https://static.structurizr.com/download/structurizr-cli.zip), unzip and move it into ./bin/structurizr-cli
     * `curl --show-error --location https://static.structurizr.com/download/structurizr-cli.zip | tar -xf - -C bin/structurizr-cli`
 * Generate the diagrams from the structurizr workspace model
