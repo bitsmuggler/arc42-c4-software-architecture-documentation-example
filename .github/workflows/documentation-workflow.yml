@@ -12,7 +12,7 @@ jobs:
             uses: addnab/docker-run-action@v3
             with:
                 image: structurizr/cli:latest
-                options: -v $PWD:/usr/local/structurizr structurizr/cli
+                options: -v ${{ github.workspace }}:/usr/local/structurizr
                 #options: -v ${{ github.workspace }}:/var/www
                 run: |
                     export -w bank.dsl -format plantuml/structurizr -output diagrams
