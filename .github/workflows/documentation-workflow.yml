@@ -1,0 +1,21 @@
+jobs:
+    compile:
+        name: Compile site assets
+        runs-on: ubuntu-latest
+        steps:
+          - name: Check out the repo
+            uses: actions/checkout@v2
+          - name: Run the build process with Docker
+            uses: addnab/docker-run-action@v3
+            with:
+                image: structurizr/cli:latest
+                #options: -v ${{ github.workspace }}:/var/www
+                run: |
+                    export -w bank.dsl -format plantuml/structurizr -output diagrams
+          - name: Run the build process with Docker
+            uses: addnab/docker-run-action@v3
+            with:
+                image: asciidoctor/docker-asciidoctor:latest
+                #options: -v ${{ github.workspace }}:/var/www
+                run: |
+                    asciidoctor -b html5 -r asciidoctor-diagram internet-banking-system.adoc
