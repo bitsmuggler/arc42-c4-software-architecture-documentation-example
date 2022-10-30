@@ -20,6 +20,6 @@ jobs:
             uses: addnab/docker-run-action@v3
             with:
                 image: asciidoctor/docker-asciidoctor:latest
-                options: -v ${{ github.workspace }}:/var/www
+                options: -v ${{ github.workspace }}:/documents/
                 run: |
                     asciidoctor -b html5 -r asciidoctor-diagram  /home/runner/work/arc42-c4-software-architecture-documentation-example/documentation/internet-banking-system.adoc
