@@ -1,3 +1,6 @@
+name: build-software-architecture-documentation
+run-name: Build Software Architecture Documentation
+on: [push]
 jobs:
     compile:
         name: Compile site assets
