@@ -1,6 +1,6 @@
 diagrams/
-bin/structurizr-cli/docs
-bin/structurizr-cli/lib
+bin/structurizr-cli/
+bin/structurizr-cli/
 documentation/images/diag-*.png
 *.cache
 *.pdf
