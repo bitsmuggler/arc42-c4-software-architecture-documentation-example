@@ -15,16 +15,11 @@ jobs:
                 options: -v ${{ github.workspace }}:/usr/local/structurizr
                 run: |
                     cd /usr/local/structurizr && export workspace=bank.dsl format=plantuml/structurizr output=diagrams
-          - name: Upload production artifacts
-            uses: actions/upload-artifact@v3
-            with:
-                name: dist-without-markdown
-                path: |
-                  diagrams
           - name: Build documentation
             uses: addnab/docker-run-action@v3
             with:
                 image: asciidoctor/docker-asciidoctor:latest
                 options: -v ${{ github.workspace }}:/documents/
                 run: |
+                    curl --show-error --location https://static.structurizr.com/download/structurizr-cli.zip | tar -xf - -C bin/structurizr-cli
                     asciidoctor -b html5 -r asciidoctor-diagram documentation/internet-banking-system.adoc
