@@ -15,6 +15,12 @@ jobs:
                 options: -v ${{ github.workspace }}:/usr/local/structurizr
                 run: |
                     cd /usr/local/structurizr && export workspace=bank.dsl format=plantuml/structurizr output=diagrams
+          - name: Upload production artifacts
+            uses: actions/upload-artifact@v3
+            with:
+                name: dist-without-markdown
+                path: |
+                  diagrams
           - name: Build documentation
             uses: addnab/docker-run-action@v3
             with:
