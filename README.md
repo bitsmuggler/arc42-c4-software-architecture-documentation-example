@@ -6,7 +6,7 @@ Technologies involved:
 * [arc42](https://arc42.org/) to get the structure for the software architecture documentation
 * [C4 Model](https://c4model.com/) an "abstraction-first" approach to diagramming software architecture, based upon abstractions that reflect how software architects and developers think about and build software.
 * [Structurizr DSL](https://structurizr.com/dsl) to describe the [C4 Model](https://c4model.com/) of the software system
-* [Structurizr CLI] (https://github.com/structurizr/cli) a command line utility for Structurizr to export the [PlantUML](https://plantuml.com/) diagrams from the C4 Model described in the Structurizr DSL
+* [Structurizr CLI](https://github.com/structurizr/cli) a command line utility for Structurizr to export the [PlantUML](https://plantuml.com/) diagrams from the C4 Model described in the Structurizr DSL
 * [AsciiDoc](https://asciidoc.org/) as format to write the software architecture documentation
 * [Asciidoctor](https://docs.asciidoctor.org/asciidoctor) to generate the representations of the software architecture documentation written in asciidoc 
 
