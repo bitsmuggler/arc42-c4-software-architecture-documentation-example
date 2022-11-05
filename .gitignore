@@ -5,3 +5,4 @@ documentation/images/diag-*.png
 *.cache
 *.pdf
 *.html
+.DS_Store
