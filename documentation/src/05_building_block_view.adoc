@@ -13,6 +13,12 @@ include::../../diagrams/structurizr-Containers.puml[]
 include::../../diagrams/structurizr-Containers-key.puml[]
 ....
 
+**Legende**
+[plantuml, format=png]   
+....
+include::../../diagrams/structurizr-Containers-key.puml[]
+....
+
 
 
 _**<Overview Diagram>**_
@@ -76,6 +82,11 @@ _<black box template>_
 [plantuml, format=png]   
 ....
 include::../../diagrams/structurizr-Components.puml[]
+....
+
+**Legende**
+[plantuml, format=png]   
+....
 include::../../diagrams/structurizr-Components-key.puml[]
 ....
 
