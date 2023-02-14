@@ -17,7 +17,7 @@ Technologies involved:
     * [Asciidoctor-Diagrams](https://docs.asciidoctor.org/diagram-extension/latest/)
     * [Asciidoctor-PDF](https://docs.asciidoctor.org/pdf-converter/latest/install/)
 * Download the [structurizr-cli](https://static.structurizr.com/download/structurizr-cli.zip), unzip and move it into ./bin/structurizr-cli
-    * `curl --show-error --location https://static.structurizr.com/download/structurizr-cli.zip | tar -xf - -C bin/structurizr-cli`
+    * `curl --show-error --location https://static.structurizr.com/download/structurizr-cli.zip  -o tmp.zip && unzip -d bin/structurizr-cli/. tmp.zip && rm tmp.zip`
 * Generate the diagrams from the structurizr workspace model
     * ``
     ./bin/structurizr-cli/structurizr.sh export -w bank.dsl -format plantuml/structurizr -output diagrams
