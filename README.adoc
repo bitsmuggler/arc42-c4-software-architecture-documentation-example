@@ -13,17 +13,33 @@ Technologies involved:
 
 == Prerequisites
 
-* Install https://docs.asciidoctor.org/asciidoctor[Asciidoctor], https://docs.asciidoctor.org/diagram-extension/latest/[Asciidoctor Diagrams] and https://docs.asciidoctor.org/pdf-converter/latest/[Asciidoctor PDF]
-** https://docs.asciidoctor.org/asciidoctor/latest/install/[Asciidoctor]
-** https://docs.asciidoctor.org/diagram-extension/latest/[Asciidoctor-Diagrams]
-** https://docs.asciidoctor.org/pdf-converter/latest/install/[Asciidoctor-PDF]
-* Download the https://github.com/structurizr/cli/releases[structurizr-cli], unzip and move it into `./bin/structurizr-cli`
-  
+=== Install AsciiDoctor
+
+Install https://docs.asciidoctor.org/asciidoctor[Asciidoctor], https://docs.asciidoctor.org/diagram-extension/latest/[Asciidoctor Diagrams] and https://docs.asciidoctor.org/pdf-converter/latest/[Asciidoctor PDF]
+
+* https://docs.asciidoctor.org/asciidoctor/latest/install/[Asciidoctor]
+* https://docs.asciidoctor.org/diagram-extension/latest/[Asciidoctor-Diagrams]
+* https://docs.asciidoctor.org/pdf-converter/latest/install/[Asciidoctor-PDF]
+
+=== Generate PlantUML Diagrams from the C4 Model
+
+==== With the Structurizr CLI via Docker Image
+
+[source, bash]
+----
+docker run -it --rm -v $PWD:/usr/local/structurizr structurizr/cli export -w bank.dsl -format plantuml/structurizr -output diagrams
+----
+
+==== With a local installed Structurizr CLI
+
+Download the https://github.com/structurizr/cli/releases[structurizr-cli], unzip and move it into `./bin/structurizr-cli` or use the latest Docker Image
+
 [source, bash]
 ----
 curl --show-error --location https://github.com/structurizr/cli/releases/download/v{selected-version}/structurizr-cli-{selected-version}.zip  -o tmp.zip && unzip -d bin/structurizr-cli/. tmp.zip && rm tmp.zip
 ----
-* Generate the diagrams from the structurizr workspace model
+
+Generate the diagrams from the structurizr workspace model
 
 [source, bash]
 ----
@@ -32,14 +48,14 @@ curl --show-error --location https://github.com/structurizr/cli/releases/downloa
 
 == Generate the software architecture documentation representations
 
-* Generate the documentation as HTML representation
+Generate the documentation as HTML representation
 
 [source, bash]
 ----
 asciidoctor -b html5 -r asciidoctor-diagram internet-banking-system.adoc
 ----
 
-* Generate the documentation as PDF representation
+Generate the documentation as PDF representation
 
 [source, bash]
 ----
