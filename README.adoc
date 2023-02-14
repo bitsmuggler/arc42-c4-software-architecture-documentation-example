@@ -1,3 +1,6 @@
+:selected-version: 1.25.0
+:icons: font
+
 = Software Architecture Documentation Example with arc42 and C4 Model
 
 This example shows how to use arc42 in combination with the C4 model with the Documentation as Code technique.
@@ -9,39 +12,48 @@ Technologies involved:
 * https://structurizr.com/dsl[Structurizr DSL] to describe the https://c4model.com/[C4 Model] of the software system
 * https://github.com/structurizr/cli[Structurizr CLI] a command line utility for Structurizr to export the https://plantuml.com/[PlantUML] diagrams from the C4 Model described in the Structurizr DSL
 * https://asciidoc.org/[AsciiDoc] as format to write the software architecture documentation
-* https://docs.asciidoctor.org/asciidoctor[Asciidoctor] to generate the representations of the software architecture documentation written in asciidoc
+* https://doctoolchain.org[docToolchain] to generate the representations of the software architecture documentation written in asciidoc. docToolchain makes use of  https://docs.asciidoctor.org/asciidoctor[Asciidoctor].
+* https://kroki.io[kroki] to generate diagrams
 
 == Prerequisites
 
-* Install https://docs.asciidoctor.org/asciidoctor[Asciidoctor], https://docs.asciidoctor.org/diagram-extension/latest/[Asciidoctor Diagrams] and https://docs.asciidoctor.org/pdf-converter/latest/[Asciidoctor PDF]
-** https://docs.asciidoctor.org/asciidoctor/latest/install/[Asciidoctor]
-** https://docs.asciidoctor.org/diagram-extension/latest/[Asciidoctor-Diagrams]
-** https://docs.asciidoctor.org/pdf-converter/latest/install/[Asciidoctor-PDF]
 * Download the https://github.com/structurizr/cli/releases[structurizr-cli], unzip and move it into `./bin/structurizr-cli`
   
-[source, bash]
+[source, bash, subs="attributes"]
 ----
 curl --show-error --location https://github.com/structurizr/cli/releases/download/v{selected-version}/structurizr-cli-{selected-version}.zip  -o tmp.zip && unzip -d bin/structurizr-cli/. tmp.zip && rm tmp.zip
 ----
+
 * Generate the diagrams from the structurizr workspace model
 
 [source, bash]
 ----
-./bin/structurizr-cli/structurizr.sh export -w bank.dsl -format plantuml/structurizr -output diagrams
+./bin/structurizr-cli/structurizr.sh export -w bank.dsl -format plantuml/structurizr -output documentation/diagrams
 ----
 
 == Generate the software architecture documentation representations
 
-* Generate the documentation as HTML representation
+NOTE: these examples use the public https://kroki.io[kroki.io] instance to generate the diagrams.
+For your own documentation, replace the references to kroki.io with your own kroki instance.
+
+* Generate the documentation as single HTML file
 
 [source, bash]
 ----
-asciidoctor -b html5 -r asciidoctor-diagram internet-banking-system.adoc
+./dtcw generateHTML
 ----
 
 * Generate the documentation as PDF representation
 
 [source, bash]
 ----
-asciidoctor -b pdf -r asciidoctor-diagram -r asciidoctor-pdf  internet-banking-system.adoc
+./dtcw generatePDF
 ----
+
+* Generate the documentation as Microsite
+
+[source, bash]
+----
+./dtcw generateSite
+----
+

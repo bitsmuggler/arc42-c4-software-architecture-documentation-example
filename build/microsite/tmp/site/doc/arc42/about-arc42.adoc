@@ -1,0 +1,71 @@
+:jbake-status: published
+:jbake-order: -1
+:jbake-type: page_toc
+:jbake-menu: arc42
+:jbake-title: about-arc42.adoc
+
+ifndef::dtc-magic-toc[]
+:dtc-magic-toc:
+
+
+:toc: left
+
+++++
+<!-- endtoc -->
+++++
+endif::[]
+
+ifndef::dtc-magic-toc[]
+:dtc-magic-toc:
+
+
+:toc: left
+
+++++
+<!-- endtoc -->
+++++
+endif::[]
+
+ifndef::dtc-magic-toc[]
+:dtc-magic-toc:
+
+
+:toc: left
+
+++++
+<!-- endtoc -->
+++++
+endif::[]
+
+ifndef::dtc-magic-toc[]
+:dtc-magic-toc:
+
+
+:toc: left
+
+++++
+<!-- endtoc -->
+++++
+endif::[]
+
+ifndef::dtc-magic-toc[]
+:dtc-magic-toc:
+
+
+:toc: left
+
+++++
+<!-- endtoc -->
+++++
+endif::[]
+:homepage: https://arc42.org
+
+:keywords: software-architecture, documentation, template, arc42
+
+:numbered!:
+**CAS Software Architecture**
+
+[role="lead"]
+Software Architecture Documentation with arc42, C4 model and Documentation as Code
+
+

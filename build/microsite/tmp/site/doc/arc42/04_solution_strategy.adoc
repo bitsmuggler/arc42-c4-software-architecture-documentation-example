@@ -1,0 +1,21 @@
+:jbake-status: published
+:jbake-order: 4
+:jbake-type: page_toc
+:jbake-menu: arc42
+:jbake-title: Solution Strategy
+
+ifndef::dtc-magic-toc[]
+:dtc-magic-toc:
+
+
+:toc: left
+
+++++
+<!-- endtoc -->
+++++
+endif::[]
+[[section-solution-strategy]]
+== Solution Strategy
+
+
+

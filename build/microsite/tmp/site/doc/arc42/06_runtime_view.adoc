@@ -1,0 +1,48 @@
+:jbake-status: published
+:jbake-order: 6
+:jbake-type: page_toc
+:jbake-menu: arc42
+:jbake-title: Runtime View
+
+ifndef::dtc-magic-toc[]
+:dtc-magic-toc:
+
+
+:toc: left
+
+++++
+<!-- endtoc -->
+++++
+endif::[]
+:diagram-server-url: https://kroki.io
+:diagram-server-type: kroki_io
+
+[[section-runtime-view]]
+== Runtime View
+
+
+
+
+=== Sign-In
+
+[plantuml, format=png]   
+....
+include::../diagrams/structurizr-SignIn.puml[]
+....
+
+**Legende**
+[plantuml, format=png, width=50%]   
+....
+include::../diagrams/structurizr-SignIn-key.puml[]
+....
+
+
+* _<insert runtime diagram or textual description of the scenario>_
+* _<insert description of the notable aspects of the interactions between the
+building block instances depicted in this diagram.>_
+
+=== <Runtime Scenario 2>
+
+=== ...
+
+=== <Runtime Scenario n>

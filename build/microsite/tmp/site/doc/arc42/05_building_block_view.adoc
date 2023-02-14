@@ -1,0 +1,148 @@
+:jbake-status: published
+:jbake-order: 5
+:jbake-type: page_toc
+:jbake-menu: arc42
+:jbake-title: Building Block View
+
+ifndef::dtc-magic-toc[]
+:dtc-magic-toc:
+
+
+:toc: left
+
+++++
+<!-- endtoc -->
+++++
+endif::[]
+:diagram-server-url: https://kroki.io
+:diagram-server-type: kroki_io
+
+[[section-building-block-view]]
+== Building Block View
+
+
+
+=== Internet Banking System
+
+[plantuml, format=png]   
+....
+include::../diagrams/structurizr-Containers.puml[]
+include::../diagrams/structurizr-Containers-key.puml[]
+....
+
+**Legende**
+[plantuml, format=png]   
+....
+include::../diagrams/structurizr-Containers-key.puml[]
+....
+
+
+
+_**<Overview Diagram>**_
+
+Motivation::
+
+_<text explanation>_
+
+
+Contained Building Blocks::
+_<Description of contained building block (black boxes)>_
+
+Important Interfaces::
+_<Description of important interfaces>_
+
+
+
+
+==== <Name black box 1>
+
+
+
+_<Purpose/Responsibility>_
+
+_<Interface(s)>_
+
+_<(Optional) Quality/Performance Characteristics>_
+
+_<(Optional) Directory/File Location>_
+
+_<(Optional) Fulfilled Requirements>_
+
+_<(optional) Open Issues/Problems/Risks>_
+
+
+
+
+==== <Name black box 2>
+
+_<black box template>_
+
+==== <Name black box n>
+
+_<black box template>_
+
+
+==== <Name interface 1>
+
+...
+
+==== <Name interface m>
+
+
+
+=== Level 2
+
+
+
+==== White Box API Application
+
+[plantuml, format=png]   
+....
+include::../diagrams/structurizr-Components.puml[]
+....
+
+**Legende**
+[plantuml, format=png]   
+....
+include::../diagrams/structurizr-Components-key.puml[]
+....
+
+
+_<white box template>_
+
+==== White Box _<building block 2>_
+
+
+_<white box template>_
+
+...
+
+==== White Box _<building block m>_
+
+
+_<white box template>_
+
+
+
+=== Level 3
+
+
+
+
+==== White Box <_building block x.1_>
+
+
+
+
+_<white box template>_
+
+
+==== White Box <_building block x.2_>
+
+_<white box template>_
+
+
+
+==== White Box <_building block y.1_>
+
+_<white box template>_

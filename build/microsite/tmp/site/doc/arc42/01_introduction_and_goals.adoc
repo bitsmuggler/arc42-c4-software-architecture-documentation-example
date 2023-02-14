@@ -1,0 +1,39 @@
+:jbake-status: published
+:jbake-order: 1
+:jbake-type: page_toc
+:jbake-menu: arc42
+:jbake-title: Introduction and Goals
+
+ifndef::dtc-magic-toc[]
+:dtc-magic-toc:
+
+
+:toc: left
+
+++++
+<!-- endtoc -->
+++++
+endif::[]
+[[section-introduction-and-goals]]
+== Introduction and Goals
+
+
+
+=== Requirements Overview
+
+
+
+=== Quality Goals
+
+
+
+=== Stakeholders
+
+
+
+[options="header",cols="1,2,2"]
+|===
+|Role/Name|Contact|Expectations
+| _<Role-1>_ | _<Contact-1>_ | _<Expectation-1>_
+| _<Role-2>_ | _<Contact-2>_ | _<Expectation-2>_
+|===

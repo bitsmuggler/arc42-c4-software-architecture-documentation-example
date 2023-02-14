@@ -1,0 +1,38 @@
+:jbake-status: published
+:jbake-order: 8
+:jbake-type: page_toc
+:jbake-menu: arc42
+:jbake-title: Cross-cutting Concepts
+
+ifndef::dtc-magic-toc[]
+:dtc-magic-toc:
+
+
+:toc: left
+
+++++
+<!-- endtoc -->
+++++
+endif::[]
+[[section-concepts]]
+== Cross-cutting Concepts
+
+
+
+
+
+=== _<Concept 1>_
+
+_<explanation>_
+
+
+
+=== _<Concept 2>_
+
+_<explanation>_
+
+...
+
+=== _<Concept n>_
+
+_<explanation>_

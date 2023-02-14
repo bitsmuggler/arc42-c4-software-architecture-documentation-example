@@ -1,0 +1,21 @@
+:jbake-status: published
+:jbake-order: 2
+:jbake-type: page_toc
+:jbake-menu: arc42
+:jbake-title: Architecture Constraints
+
+ifndef::dtc-magic-toc[]
+:dtc-magic-toc:
+
+
+:toc: left
+
+++++
+<!-- endtoc -->
+++++
+endif::[]
+[[section-architecture-constraints]]
+== Architecture Constraints
+
+
+
