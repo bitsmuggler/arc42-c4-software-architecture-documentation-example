@@ -17,10 +17,10 @@ Technologies involved:
 ** https://docs.asciidoctor.org/asciidoctor/latest/install/[Asciidoctor]
 ** https://docs.asciidoctor.org/diagram-extension/latest/[Asciidoctor-Diagrams]
 ** https://docs.asciidoctor.org/pdf-converter/latest/install/[Asciidoctor-PDF]
-* Download the https://static.structurizr.com/download/structurizr-cli.zip[structurizr-cli], unzip and move it into `./bin/structurizr-cli`
+* Download the https://github.com/structurizr/cli/releases[structurizr-cli], unzip and move it into `./bin/structurizr-cli`
 [source, bash]
 ----
-curl --show-error --location https://static.structurizr.com/download/structurizr-cli.zip  -o tmp.zip && unzip -d bin/structurizr-cli/. tmp.zip && rm tmp.zip
+curl --show-error --location https://github.com/structurizr/cli/releases/download/v{selected-version}/structurizr-cli-{selected-version}.zip  -o tmp.zip && unzip -d bin/structurizr-cli/. tmp.zip && rm tmp.zip
 ----
 * Generate the diagrams from the structurizr workspace model
 [source, bash]
