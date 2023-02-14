@@ -6,3 +6,4 @@ documentation/images/diag-*.png
 *.pdf
 *.html
 .DS_Store
+.idea/

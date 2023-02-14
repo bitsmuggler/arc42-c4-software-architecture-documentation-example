@@ -1,0 +1,39 @@
+= Software Architecture Documentation Example with arc42 and C4 Model
+
+This example shows how to use arc42 in combination with the C4 model with the Documentation as Code technique.
+
+Technologies involved:
+
+* https://arc42.org/[arc42] to get the structure for the software architecture documentation
+* https://c4model.com/[C4 Model] an "abstraction-first" approach to diagramming software architecture, based upon abstractions that reflect how software architects and developers think about and build software.
+* https://structurizr.com/dsl[Structurizr DSL] to describe the https://c4model.com/[C4 Model] of the software system
+* https://github.com/structurizr/cli[Structurizr CLI] a command line utility for Structurizr to export the https://plantuml.com/[PlantUML] diagrams from the C4 Model described in the Structurizr DSL
+* https://asciidoc.org/[AsciiDoc] as format to write the software architecture documentation
+* https://docs.asciidoctor.org/asciidoctor[Asciidoctor] to generate the representations of the software architecture documentation written in asciidoc
+
+== Prerequisites
+
+* Install https://docs.asciidoctor.org/asciidoctor[Asciidoctor], https://docs.asciidoctor.org/diagram-extension/latest/[Asciidoctor Diagrams] and https://docs.asciidoctor.org/pdf-converter/latest/[Asciidoctor PDF]
+** https://docs.asciidoctor.org/asciidoctor/latest/install/[Asciidoctor]
+** https://docs.asciidoctor.org/diagram-extension/latest/[Asciidoctor-Diagrams]
+** https://docs.asciidoctor.org/pdf-converter/latest/install/[Asciidoctor-PDF]
+* Download the https://static.structurizr.com/download/structurizr-cli.zip[structurizr-cli], unzip and move it into `./bin/structurizr-cli`
+** `curl --show-error --location https://static.structurizr.com/download/structurizr-cli.zip  -o tmp.zip &amp;&amp; unzip -d bin/structurizr-cli/. tmp.zip &amp;&amp; rm tmp.zip`
+* Generate the diagrams from the structurizr workspace model
+** `./bin/structurizr-cli/structurizr.sh export -w bank.dsl -format plantuml/structurizr -output diagrams`
+
+== Generate the software architecture documentation representations
+
+*Generate the documentation as HTML representation*
+
+[source]
+----
+asciidoctor -b html5 -r asciidoctor-diagram internet-banking-system.adoc
+----
+
+*Generate the documentation as PDF representation*
+
+[source]
+----
+asciidoctor -b pdf -r asciidoctor-diagram -r asciidoctor-pdf  internet-banking-system.adoc
+----
