@@ -18,11 +18,13 @@ Technologies involved:
 ** https://docs.asciidoctor.org/diagram-extension/latest/[Asciidoctor-Diagrams]
 ** https://docs.asciidoctor.org/pdf-converter/latest/install/[Asciidoctor-PDF]
 * Download the https://github.com/structurizr/cli/releases[structurizr-cli], unzip and move it into `./bin/structurizr-cli`
+  
 [source, bash]
 ----
 curl --show-error --location https://github.com/structurizr/cli/releases/download/v{selected-version}/structurizr-cli-{selected-version}.zip  -o tmp.zip && unzip -d bin/structurizr-cli/. tmp.zip && rm tmp.zip
 ----
 * Generate the diagrams from the structurizr workspace model
+
 [source, bash]
 ----
 ./bin/structurizr-cli/structurizr.sh export -w bank.dsl -format plantuml/structurizr -output diagrams
@@ -30,14 +32,14 @@ curl --show-error --location https://github.com/structurizr/cli/releases/downloa
 
 == Generate the software architecture documentation representations
 
-*Generate the documentation as HTML representation*
+* Generate the documentation as HTML representation
 
 [source, bash]
 ----
 asciidoctor -b html5 -r asciidoctor-diagram internet-banking-system.adoc
 ----
 
-*Generate the documentation as PDF representation*
+* Generate the documentation as PDF representation
 
 [source, bash]
 ----
