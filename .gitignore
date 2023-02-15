@@ -8,3 +8,4 @@ documentation/images/diag-*.png
 .DS_Store
 .idea/
 .gradle/
+build/
