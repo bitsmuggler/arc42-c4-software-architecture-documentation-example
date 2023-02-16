@@ -9,14 +9,14 @@
 
 [plantuml, format=png]   
 ....
-include::../../diagrams/structurizr-Containers.puml[]
-include::../../diagrams/structurizr-Containers-key.puml[]
+include::./diagrams/structurizr-Containers.puml[]
+include::./diagrams/structurizr-Containers-key.puml[]
 ....
 
 **Legende**
 [plantuml, format=png]   
 ....
-include::../../diagrams/structurizr-Containers-key.puml[]
+include::./diagrams/structurizr-Containers-key.puml[]
 ....
 
 

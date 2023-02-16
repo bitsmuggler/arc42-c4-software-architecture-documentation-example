@@ -8,13 +8,13 @@
 
 [plantuml, format=png]   
 ....
-include::../../diagrams/structurizr-SignIn.puml[]
+include::./diagrams/structurizr-SignIn.puml[]
 ....
 
 **Legende**
 [plantuml, format=png]   
 ....
-include::../../diagrams/structurizr-SignIn-key.puml[]
+include::./diagrams/structurizr-SignIn-key.puml[]
 ....
 
 
