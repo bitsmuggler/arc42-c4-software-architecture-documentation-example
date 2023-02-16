@@ -21,17 +21,16 @@ AsciiDoctor is a fast text processor and publishing toolchain for converting Asc
 Docker Image: https://hub.docker.com/r/asciidoctor/docker-asciidoctor[asciidoctor/docker-asciidoctor]
 
 [source, bash]
----
+----
 docker run -it --rm -v $PWD:/documents/ asciidoctor/docker-asciidoctor asciidoctor --version
----
+----
 
 https://github.com/asciidoctor/docker-asciidoctor/blob/main/README.adoc[Technical details about asciidoctor/docker-asciidoctor]
 
 === Local installed AsciiDoctor
 
-Install the following AsciiDoctor packages:
+Install the following https://docs.asciidoctor.org/asciidoctor/latest/install/[Asciidoctor] and the following extensions:
 
-* https://docs.asciidoctor.org/asciidoctor/latest/install/[Asciidoctor]
 * https://docs.asciidoctor.org/diagram-extension/latest/[Asciidoctor-Diagrams]
 * https://docs.asciidoctor.org/pdf-converter/latest/install/[Asciidoctor-PDF]
 
