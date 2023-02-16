@@ -14,7 +14,7 @@ Technologies involved:
 == Prerequisites
 
 === AsciiDoctor
-AsciiDoctor is a fast text processor and publishing toolchain for converting AsciiDoc content to HTML, DocBook and other formats.
+https://docs.asciidoctor.org/asciidoctor/latest/install/[Asciidoctor] is a fast text processor and publishing toolchain for converting AsciiDoc content to HTML, DocBook and other formats.
 
 === Use the Docker Image
 
