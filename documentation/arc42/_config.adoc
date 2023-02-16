@@ -3,7 +3,10 @@
 :toc-title: table of contents
 
 // enable table-of-contents
-:toc:
+:toc: left
 
 // where are images located?
 :imagesdir: ./images
+
+:diagram-server-url: https://kroki.io
+:diagram-server-type: kroki_io
