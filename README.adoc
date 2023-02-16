@@ -63,10 +63,9 @@ Generate the documentation as PDF representation
 ./dtcw generatePDF
 ----
 
-* Generate the documentation as Microsite
+Generate the documentation as Microsite
 
 [source, bash]
 ----
 ./dtcw generateSite
 ----
-
