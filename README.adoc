@@ -1,6 +1,11 @@
+:selected-version: 1.25.0
+:icons: font
+
 = Software Architecture Documentation Example with arc42 and C4 Model
 
 This example shows how to use https://arc42.org/[arc42] in combination with the https://c4model.com/[C4 model] with the Documentation as Code technique.
+
+It shows how to use the techniques described in https://www.workingsoftware.dev/software-architecture-documentation-the-ultimate-guide/[The ultimate Guide to Software Architecture Documentation].
 
 Technologies involved:
 
@@ -9,28 +14,10 @@ Technologies involved:
 * https://structurizr.com/dsl[Structurizr DSL] to describe the https://c4model.com/[C4 Model] of the software system
 * https://github.com/structurizr/cli[Structurizr CLI] a command line utility for Structurizr to export the https://plantuml.com/[PlantUML] diagrams from the C4 Model described in the Structurizr DSL
 * https://asciidoc.org/[AsciiDoc] as format to write the software architecture documentation
-* https://docs.asciidoctor.org/asciidoctor[Asciidoctor] to generate the representations of the software architecture documentation written in asciidoc
+* https://doctoolchain.org[docToolchain] to generate the representations of the software architecture documentation written in asciidoc. docToolchain makes use of  https://docs.asciidoctor.org/asciidoctor[Asciidoctor].
+* https://kroki.io[kroki] to generate diagrams
 
 == Prerequisites
-
-=== AsciiDoctor
-https://docs.asciidoctor.org/asciidoctor/latest/install/[Asciidoctor] is a fast text processor and publishing toolchain for converting AsciiDoc content to HTML, DocBook and other formats.
-
-=== Use the Docker Image
-
-Docker Image: https://hub.docker.com/r/asciidoctor/docker-asciidoctor[asciidoctor/docker-asciidoctor] https://github.com/asciidoctor/docker-asciidoctor/blob/main/README.adoc[(Details)]
-
-[source, bash]
-----
-docker run -it --rm -v $PWD:/documents/ asciidoctor/docker-asciidoctor asciidoctor --version
-----
-
-=== Local installed AsciiDoctor
-
-Install the following https://docs.asciidoctor.org/asciidoctor/latest/install/[Asciidoctor] and the following extensions:
-
-* https://docs.asciidoctor.org/diagram-extension/latest/[Asciidoctor-Diagrams]
-* https://docs.asciidoctor.org/pdf-converter/latest/install/[Asciidoctor-PDF]
 
 === Generate PlantUML Diagrams from the C4 Model
 
@@ -38,7 +25,7 @@ Install the following https://docs.asciidoctor.org/asciidoctor/latest/install/[A
 
 [source, bash]
 ----
-docker run -it --rm -v $PWD:/usr/local/structurizr structurizr/cli export -w bank.dsl -format plantuml/structurizr -output documentation/src/diagrams
+docker run -it --rm -v $PWD:/usr/local/structurizr structurizr/cli export -w bank.dsl -format plantuml/structurizr -output documentation/diagrams
 ----
 
 ==== With a local installed Structurizr CLI
@@ -54,31 +41,32 @@ Generate the diagrams from the structurizr workspace model
 
 [source, bash]
 ----
-./bin/structurizr-cli/structurizr.sh export -w bank.dsl -format plantuml/structurizr -output documentation/src/diagrams
+./bin/structurizr-cli/structurizr.sh export -w bank.dsl -format plantuml/structurizr -output documentation/diagrams
 ----
 
 == Generate the software architecture documentation representations
 
-=== Use the Docker Image
+NOTE: these examples use the public https://kroki.io[kroki.io] instance to generate the diagrams.
+For your own documentation, replace the references to kroki.io with your own kroki instance.
 
 Generate the documentation as HTML representation
 
 [source, bash]
 ----
-docker run -it --rm -v $PWD:/documents/ asciidoctor/docker-asciidoctor asciidoctor -b html5 -r asciidoctor-diagram documentation/internet-banking-system.adoc
-----
-
-=== Use the local installation of Asciidoctor
-Generate the documentation as HTML representation
-
-[source, bash]
-----
-asciidoctor -b html5 -r asciidoctor-diagram documentation/internet-banking-system.adoc
+./dtcw generateHTML
 ----
 
 Generate the documentation as PDF representation
 
 [source, bash]
 ----
-asciidoctor -b pdf -r asciidoctor-diagram -r asciidoctor-pdf  documentation/internet-banking-system.adoc
+./dtcw generatePDF
 ----
+
+* Generate the documentation as Microsite
+
+[source, bash]
+----
+./dtcw generateSite
+----
+

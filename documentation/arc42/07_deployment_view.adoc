@@ -1,3 +1,6 @@
+:diagram-server-url: https://kroki.io
+:diagram-server-type: kroki_io
+
 [[section-deployment-view]]
 
 
@@ -9,13 +12,13 @@
 
 [plantuml, format=png]   
 ....
-include::./diagrams/structurizr-LiveDeployment.puml[]
+include::../diagrams/structurizr-LiveDeployment.puml[]
 ....
 
 **Legende**
 [plantuml, format=png]   
 ....
-include::./diagrams/structurizr-LiveDeployment-key.puml[]
+include::../diagrams/structurizr-LiveDeployment-key.puml[]
 ....
 
 Motivation::

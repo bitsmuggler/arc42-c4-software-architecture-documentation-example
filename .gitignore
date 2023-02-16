@@ -7,3 +7,5 @@ documentation/images/diag-*.png
 *.html
 .DS_Store
 .idea/
+.gradle/
+build/
