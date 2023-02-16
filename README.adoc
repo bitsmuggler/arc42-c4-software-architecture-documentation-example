@@ -1,6 +1,6 @@
 = Software Architecture Documentation Example with arc42 and C4 Model
 
-This example shows how to use arc42 in combination with the C4 model with the Documentation as Code technique.
+This example shows how to use https://arc42.org/[arc42] in combination with the https://c4model.com/[C4 model] with the Documentation as Code technique.
 
 Technologies involved:
 
@@ -13,9 +13,23 @@ Technologies involved:
 
 == Prerequisites
 
-=== Install AsciiDoctor
+=== AsciiDoctor
+AsciiDoctor is a fast text processor and publishing toolchain for converting AsciiDoc content to HTML, DocBook and other formats.
 
-Install https://docs.asciidoctor.org/asciidoctor[Asciidoctor], https://docs.asciidoctor.org/diagram-extension/latest/[Asciidoctor Diagrams] and https://docs.asciidoctor.org/pdf-converter/latest/[Asciidoctor PDF]
+=== Use the Docker Image
+
+Docker Image: https://hub.docker.com/r/asciidoctor/docker-asciidoctor[asciidoctor/docker-asciidoctor]
+
+[source, bash]
+---
+docker run -it --rm -v $PWD:/documents/ asciidoctor/docker-asciidoctor asciidoctor --version
+---
+
+https://github.com/asciidoctor/docker-asciidoctor/blob/main/README.adoc[Technical details about asciidoctor/docker-asciidoctor]
+
+=== Local installed AsciiDoctor
+
+Install the following AsciiDoctor packages:
 
 * https://docs.asciidoctor.org/asciidoctor/latest/install/[Asciidoctor]
 * https://docs.asciidoctor.org/diagram-extension/latest/[Asciidoctor-Diagrams]
