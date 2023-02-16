@@ -45,7 +45,7 @@ For your own documentation, replace the references to kroki.io with your own kro
 ./dtcw generateHTML
 ----
 
-* Generate the documentation as PDF representation
+Generate the documentation as PDF representation
 
 [source, bash]
 ----
