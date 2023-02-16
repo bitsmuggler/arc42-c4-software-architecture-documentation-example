@@ -19,32 +19,13 @@ Technologies involved:
 
 == Prerequisites
 
-=== AsciiDoctor
-https://docs.asciidoctor.org/asciidoctor/latest/install/[Asciidoctor] is a fast text processor and publishing toolchain for converting AsciiDoc content to HTML, DocBook and other formats.
-
-=== Use the Docker Image
-
-Docker Image: https://hub.docker.com/r/asciidoctor/docker-asciidoctor[asciidoctor/docker-asciidoctor] https://github.com/asciidoctor/docker-asciidoctor/blob/main/README.adoc[(Details)]
-
-[source, bash]
-----
-docker run -it --rm -v $PWD:/documents/ asciidoctor/docker-asciidoctor asciidoctor --version
-----
-
-=== Local installed AsciiDoctor
-
-Install the following https://docs.asciidoctor.org/asciidoctor/latest/install/[Asciidoctor] and the following extensions:
-
-* https://docs.asciidoctor.org/diagram-extension/latest/[Asciidoctor-Diagrams]
-* https://docs.asciidoctor.org/pdf-converter/latest/install/[Asciidoctor-PDF]
-
 === Generate PlantUML Diagrams from the C4 Model
 
 ==== With the Structurizr CLI via Docker Image
 
 [source, bash]
 ----
-docker run -it --rm -v $PWD:/usr/local/structurizr structurizr/cli export -w bank.dsl -format plantuml/structurizr -output documentation/src/diagrams
+docker run -it --rm -v $PWD:/usr/local/structurizr structurizr/cli export -w bank.dsl -format plantuml/structurizr -output documentation/diagrams
 ----
 
 ==== With a local installed Structurizr CLI
@@ -56,7 +37,7 @@ Download the https://github.com/structurizr/cli/releases[structurizr-cli], unzip
 curl --show-error --location https://github.com/structurizr/cli/releases/download/v{selected-version}/structurizr-cli-{selected-version}.zip  -o tmp.zip && unzip -d bin/structurizr-cli/. tmp.zip && rm tmp.zip
 ----
 
-* Generate the diagrams from the structurizr workspace model
+Generate the diagrams from the structurizr workspace model
 
 [source, bash]
 ----
@@ -68,17 +49,6 @@ curl --show-error --location https://github.com/structurizr/cli/releases/downloa
 NOTE: these examples use the public https://kroki.io[kroki.io] instance to generate the diagrams.
 For your own documentation, replace the references to kroki.io with your own kroki instance.
 
-* Generate the documentation as single HTML file
-=== Use the Docker Image
-
-Generate the documentation as HTML representation
-
-[source, bash]
-----
-docker run -it --rm -v $PWD:/documents/ asciidoctor/docker-asciidoctor asciidoctor -b html5 -r asciidoctor-diagram documentation/internet-banking-system.adoc
-----
-
-=== Use the local installation of Asciidoctor
 Generate the documentation as HTML representation
 
 [source, bash]

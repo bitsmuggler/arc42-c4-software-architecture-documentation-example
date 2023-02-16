@@ -4,7 +4,7 @@ include::arc42/_config.adoc[]
 
 = Example Software Architecture Documentation with arc42 and the C4 model
 :revnumber: 8.1 EN
-:revdate: November 2022
+:revdate: February 2023
 :revremark: (based upon AsciiDoc version)
 // toc-title definition MUST follow document title without blank line!
 :toc-title: Table of Contents
