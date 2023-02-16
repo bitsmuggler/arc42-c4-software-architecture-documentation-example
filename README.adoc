@@ -38,7 +38,7 @@ Install the following https://docs.asciidoctor.org/asciidoctor/latest/install/[A
 
 [source, bash]
 ----
-docker run -it --rm -v $PWD:/usr/local/structurizr structurizr/cli export -w bank.dsl -format plantuml/structurizr -output diagrams
+docker run -it --rm -v $PWD:/usr/local/structurizr structurizr/cli export -w bank.dsl -format plantuml/structurizr -output documentation/src/diagrams
 ----
 
 ==== With a local installed Structurizr CLI
@@ -54,21 +54,31 @@ Generate the diagrams from the structurizr workspace model
 
 [source, bash]
 ----
-./bin/structurizr-cli/structurizr.sh export -w bank.dsl -format plantuml/structurizr -output diagrams
+./bin/structurizr-cli/structurizr.sh export -w bank.dsl -format plantuml/structurizr -output documentation/src/diagrams
 ----
 
 == Generate the software architecture documentation representations
+
+=== Use the Docker Image
 
 Generate the documentation as HTML representation
 
 [source, bash]
 ----
-asciidoctor -b html5 -r asciidoctor-diagram internet-banking-system.adoc
+docker run -it --rm -v $PWD:/documents/ asciidoctor/docker-asciidoctor asciidoctor -b html5 -r asciidoctor-diagram documentation/internet-banking-system.adoc
+----
+
+=== Use the local installation of Asciidoctor
+Generate the documentation as HTML representation
+
+[source, bash]
+----
+asciidoctor -b html5 -r asciidoctor-diagram documentation/internet-banking-system.adoc
 ----
 
 Generate the documentation as PDF representation
 
 [source, bash]
 ----
-asciidoctor -b pdf -r asciidoctor-diagram -r asciidoctor-pdf  internet-banking-system.adoc
+asciidoctor -b pdf -r asciidoctor-diagram -r asciidoctor-pdf  documentation/internet-banking-system.adoc
 ----
