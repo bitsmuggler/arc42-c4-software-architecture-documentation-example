@@ -15,7 +15,7 @@ Technologies involved:
 * https://github.com/structurizr/cli[Structurizr CLI] a command line utility for Structurizr to export the https://plantuml.com/[PlantUML] diagrams from the C4 Model described in the Structurizr DSL
 * https://asciidoc.org/[AsciiDoc] as format to write the software architecture documentation
 * https://doctoolchain.org[docToolchain] to generate the representations of the software architecture documentation written in https://asciidoc.org/[AsciiDoc]. docToolchain makes use of  https://docs.asciidoctor.org/asciidoctor[Asciidoctor].
-* https://kroki.io[kroki] to generate diagrams
+* https://kroki.io[Kroki] to generate diagrams
 
 == Prerequisites
 
