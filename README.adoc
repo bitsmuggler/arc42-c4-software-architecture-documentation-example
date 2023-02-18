@@ -17,6 +17,8 @@ Technologies involved:
 * https://doctoolchain.org[docToolchain] to generate the representations of the software architecture documentation written in https://asciidoc.org/[AsciiDoc]. docToolchain makes use of  https://docs.asciidoctor.org/asciidoctor[Asciidoctor].
 * https://kroki.io[Kroki] to generate diagrams
 
+Hint: Take a look to the https://www.workingsoftware.dev/documentation-as-code-tools[Documentation as Code Technology Radar]
+
 == Prerequisites
 
 === Generate PlantUML Diagrams from the C4 Model
