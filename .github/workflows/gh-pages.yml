@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Download the Structurizr Cli
-        run: curl --show-error --location https://github.com/structurizr/cli/releases/download/v{selected-version}/structurizr-cli-{selected-version}.zip  -o tmp.zip && unzip -d bin/structurizr-cli/. tmp.zip && rm tmp.zip
+        run: curl --show-error --location https://github.com/structurizr/cli/releases/download/v1.26.0/structurizr-cli-1.26.0.zip  -o tmp.zip && unzip -d bin/structurizr-cli/. tmp.zip && rm tmp.zip
       - name: Generate C4 Diagrams
         run: ./bin/structurizr-cli/structurizr.sh export -w bank.dsl -format plantuml/structurizr -output documentation/diagrams
       - name: Setup docToolchain
