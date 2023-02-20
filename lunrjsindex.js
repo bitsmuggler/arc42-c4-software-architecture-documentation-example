@@ -18,14 +18,6 @@ var documents = [
 
 {
     "id": 2,
-    "uri": "arc42/09_architecture_decisions.html",
-    "menu": "arc42",
-    "title": "Architecture Decisions",
-    "text": " Table of Contents Architecture Decisions Architecture Decisions "
-},
-
-{
-    "id": 3,
     "uri": "arc42/06_runtime_view.html",
     "menu": "arc42",
     "title": "Runtime View",
@@ -33,7 +25,7 @@ var documents = [
 },
 
 {
-    "id": 4,
+    "id": 3,
     "uri": "arc42/05_building_block_view.html",
     "menu": "arc42",
     "title": "Building Block View",
@@ -41,15 +33,15 @@ var documents = [
 },
 
 {
-    "id": 5,
-    "uri": "arc42/11_technical_risks.html",
+    "id": 4,
+    "uri": "arc42/09_architecture_decisions.html",
     "menu": "arc42",
-    "title": "Risks and Technical Debts",
-    "text": " Table of Contents Risks and Technical Debts Risks and Technical Debts "
+    "title": "Architecture Decisions",
+    "text": " Table of Contents Architecture Decisions Architecture Decisions "
 },
 
 {
-    "id": 6,
+    "id": 5,
     "uri": "arc42/07_deployment_view.html",
     "menu": "arc42",
     "title": "Deployment View",
@@ -57,7 +49,7 @@ var documents = [
 },
 
 {
-    "id": 7,
+    "id": 6,
     "uri": "arc42/02_architecture_constraints.html",
     "menu": "arc42",
     "title": "Architecture Constraints",
@@ -65,11 +57,19 @@ var documents = [
 },
 
 {
-    "id": 8,
+    "id": 7,
     "uri": "arc42/01_introduction_and_goals.html",
     "menu": "arc42",
     "title": "Introduction and Goals",
     "text": " Table of Contents Introduction and Goals Requirements Overview Quality Goals Stakeholders Introduction and Goals Requirements Overview Quality Goals Stakeholders Role/Name Contact Expectations &lt;Role-1&gt; &lt;Contact-1&gt; &lt;Expectation-1&gt; &lt;Role-2&gt; &lt;Contact-2&gt; &lt;Expectation-2&gt; "
+},
+
+{
+    "id": 8,
+    "uri": "arc42/11_technical_risks.html",
+    "menu": "arc42",
+    "title": "Risks and Technical Debts",
+    "text": " Table of Contents Risks and Technical Debts Risks and Technical Debts "
 },
 
 {
@@ -82,18 +82,18 @@ var documents = [
 
 {
     "id": 10,
-    "uri": "arc42/04_solution_strategy.html",
-    "menu": "arc42",
-    "title": "Solution Strategy",
-    "text": " Table of Contents Solution Strategy Solution Strategy "
-},
-
-{
-    "id": 11,
     "uri": "arc42/03_system_scope_and_context.html",
     "menu": "arc42",
     "title": "System Scope and Context",
     "text": " Table of Contents System Scope and Context Business Context Technical Context System Scope and Context Business Context Failed to generate image: 400 Bad Request Unresolved directive in &lt;stdin&gt; - include::../diagrams/structurizr-SystemContext.puml[] Legende Failed to generate image: 400 Bad Request Unresolved directive in &lt;stdin&gt; - include::../diagrams/structurizr-SystemContext-key.puml[] &lt;Diagram or Table&gt; &lt;optionally: Explanation of external domain interfaces&gt; Technical Context &lt;Diagram or Table&gt; &lt;optionally: Explanation of technical interfaces&gt; &lt;Mapping Input/Output to Channels&gt; "
+},
+
+{
+    "id": 11,
+    "uri": "arc42/04_solution_strategy.html",
+    "menu": "arc42",
+    "title": "Solution Strategy",
+    "text": " Table of Contents Solution Strategy Solution Strategy "
 },
 
 {

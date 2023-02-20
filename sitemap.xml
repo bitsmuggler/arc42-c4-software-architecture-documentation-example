@@ -12,11 +12,6 @@
     </url>
 
     <url>
-    	<loc>http://jbake.org/arc42/09_architecture_decisions.html</loc>
-    	<lastmod>2023-02-20</lastmod>
-    </url>
-
-    <url>
     	<loc>http://jbake.org/arc42/06_runtime_view.html</loc>
     	<lastmod>2023-02-20</lastmod>
     </url>
@@ -27,7 +22,7 @@
     </url>
 
     <url>
-    	<loc>http://jbake.org/arc42/11_technical_risks.html</loc>
+    	<loc>http://jbake.org/arc42/09_architecture_decisions.html</loc>
     	<lastmod>2023-02-20</lastmod>
     </url>
 
@@ -47,17 +42,22 @@
     </url>
 
     <url>
+    	<loc>http://jbake.org/arc42/11_technical_risks.html</loc>
+    	<lastmod>2023-02-20</lastmod>
+    </url>
+
+    <url>
     	<loc>http://jbake.org/arc42/08_concepts.html</loc>
     	<lastmod>2023-02-20</lastmod>
     </url>
 
     <url>
-    	<loc>http://jbake.org/arc42/04_solution_strategy.html</loc>
+    	<loc>http://jbake.org/arc42/03_system_scope_and_context.html</loc>
     	<lastmod>2023-02-20</lastmod>
     </url>
 
     <url>
-    	<loc>http://jbake.org/arc42/03_system_scope_and_context.html</loc>
+    	<loc>http://jbake.org/arc42/04_solution_strategy.html</loc>
     	<lastmod>2023-02-20</lastmod>
     </url>
 
