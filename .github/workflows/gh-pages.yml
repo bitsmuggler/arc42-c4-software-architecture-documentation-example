@@ -27,7 +27,7 @@ jobs:
       - name: Copy documentation to public
         run: cp -r ./build/html5 ./public
       - name: Rename entry point
-        run: mv internet-banking-system.html index.html
+        run: cd build/html5 && mv internet-banking-system.html index.html
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
