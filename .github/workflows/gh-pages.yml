@@ -19,7 +19,7 @@ jobs:
       - name: setup
         run: chmod +x dtcw
       - name: generateSite
-        run: ./dtcw generateSite
+        run: ./dtcw generateHTML
       - name: copyToPublic
         run: cp -r ./build/microsite/output ./public
       - name: Deploy
