@@ -7,6 +7,8 @@ This example shows how to use https://arc42.org/[arc42] in combination with the 
 
 It shows how to use the techniques described in https://www.workingsoftware.dev/software-architecture-documentation-the-ultimate-guide/[The ultimate Guide to Software Architecture Documentation].
 
+Check out the deployed https://bitsmuggler.github.io/arc42-c4-software-architecture-documentation-example/[HTML build] provided on GitHub Pages.
+
 Technologies involved:
 
 * https://arc42.org/[arc42] to get the structure for the software architecture documentation
@@ -17,7 +19,7 @@ Technologies involved:
 * https://doctoolchain.org[docToolchain] to generate the representations of the software architecture documentation written in https://asciidoc.org/[AsciiDoc]. docToolchain makes use of  https://docs.asciidoctor.org/asciidoctor[Asciidoctor].
 * https://kroki.io[Kroki] to generate diagrams
 
-Hint: Take a look to the https://www.workingsoftware.dev/documentation-as-code-tools[Documentation as Code Technology Radar]
+For more tech inspiration take a look at the https://www.workingsoftware.dev/documentation-as-code-tools[Documentation as Code Technology Radar]
 
 == Prerequisites
 
