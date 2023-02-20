@@ -16,12 +16,18 @@ jobs:
       DTC_HEADLES: true
     steps:
       - uses: actions/checkout@v3
-      - name: setup
+      - name: Download the Structurizr Cli
+        run: curl --show-error --location https://github.com/structurizr/cli/releases/download/v{selected-version}/structurizr-cli-{selected-version}.zip  -o tmp.zip && unzip -d bin/structurizr-cli/. tmp.zip && rm tmp.zip
+      - name: Generate C4 Diagrams
+        run: ./bin/structurizr-cli/structurizr.sh export -w bank.dsl -format plantuml/structurizr -output documentation/diagrams
+      - name: Setup docToolchain
         run: chmod +x dtcw
-      - name: generateSite
+      - name: Generate HTML site
         run: ./dtcw generateHTML
-      - name: copyToPublic
+      - name: Copy documentation to public
         run: cp -r ./build/html5 ./public
+      - name: Rename entry point
+        run: mv internet-banking-system.html index.html
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
