@@ -25,9 +25,7 @@ jobs:
       - name: Generate HTML site
         run: ./dtcw generateHTML
       - name: Copy documentation to public
-        run: cp -r ./build/html5 ./public
-      - name: Rename entry point
-        run: mv ./public/internet-banking-system.html ./public/index.html
+        run: cp -r ./build/html5 ./public && mv ./public/internet-banking-system.html ./public/index.html
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
