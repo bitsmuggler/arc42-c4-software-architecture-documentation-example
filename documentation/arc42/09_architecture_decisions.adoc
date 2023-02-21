@@ -1,5 +1,8 @@
 [[section-design-decisions]]
 == Architecture Decisions
 
+include::../adrs/0001-decision-a.adoc[]
 
+include::../adrs/0002-decision-b.adoc[]
 
+include::../adrs/0003-decision-c.adoc[]

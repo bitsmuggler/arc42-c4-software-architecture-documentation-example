@@ -18,6 +18,7 @@ Technologies involved:
 * https://asciidoc.org/[AsciiDoc] as format to write the software architecture documentation
 * https://doctoolchain.org[docToolchain] to generate the representations of the software architecture documentation written in https://asciidoc.org/[AsciiDoc]. docToolchain makes use of  https://docs.asciidoctor.org/asciidoctor[Asciidoctor].
 * https://kroki.io[Kroki] to generate diagrams
+* https://github.com/npryce/adr-tools[adr-tools] to generate and manage Architecture Decision Records (ADRs)
 
 For more tech inspiration take a look at the https://www.workingsoftware.dev/documentation-as-code-tools[Documentation as Code Technology Radar]
 
@@ -46,6 +47,43 @@ Generate the diagrams from the structurizr workspace model
 [source, bash]
 ----
 ./bin/structurizr-cli/structurizr.sh export -w bank.dsl -format plantuml/structurizr -output documentation/diagrams
+----
+
+== Migrate markdown based ADRs from adr-tools to AsciiDoc
+
+=== Install & configure adr-tools
+
+. Install [adr-tools](https://github.com/npryce/adr-tools)
+. Configure the adr template with the following header config
+
+[source, markdown]
+----
+### TITLE
+
+Date: DATE
+
+#### Status
+
+STATUS
+
+#### Context
+
+The issue motivating this decision, and any context that influences or constrains the decision.
+
+#### Decision
+
+The change that we're proposing or have agreed to implement.
+
+#### Consequences
+
+What becomes easier or more difficult to do and any risks introduced by the change that will need to be mitigated.
+----
+
+=== Migrate the generated markdown based decisions with the docker-asciidoctor image under Linux
+
+[source, bash]
+----
+for f in ./documentation/adrs/*.md; do docker run -it --rm -v $PWD:/documents asciidoctor/docker-asciidoctor kramdoc $f; done
 ----
 
 == Generate the software architecture documentation representations
