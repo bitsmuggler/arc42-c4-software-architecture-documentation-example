@@ -61,6 +61,8 @@ Generate the diagrams from the structurizr workspace model
 adr config
 ----
 
+Replace the content of the `template.md` file with the following content:
+
 [source, markdown]
 ----
 ### TITLE
