@@ -56,6 +56,11 @@ Generate the diagrams from the structurizr workspace model
 . Install https://github.com/npryce/adr-tools[adr-tools]
 . Configure the adr template with the following header config
 
+[source, bash]
+----
+adr config
+----
+
 [source, markdown]
 ----
 ### TITLE
