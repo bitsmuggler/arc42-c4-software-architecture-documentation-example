@@ -51,9 +51,9 @@ Generate the diagrams from the structurizr workspace model
 
 == Migrate markdown based ADRs from adr-tools to AsciiDoc
 
-=== Install & configure adr-tools
+=== Install and configure adr-tools
 
-. Install [adr-tools](https://github.com/npryce/adr-tools)
+. Install https://github.com/npryce/adr-tools[adr-tools]
 . Configure the adr template with the following header config
 
 [source, markdown]
