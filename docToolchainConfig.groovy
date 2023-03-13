@@ -6,13 +6,14 @@ outputPath = 'build'
 
 inputPath = 'documentation';
 
+docDir = System.getProperty('docDir')?:'.'
+
 // the pdfThemeDir config in this file is outdated.
 // please check http://doctoolchain.org/docToolchain/v2.0.x/020_tutorial/030_generateHTML.html#_pdf_style for further details
 // pdfThemeDir = './src/docs/pdfTheme'
 
 inputFiles = [
-        [file: 'internet-banking-system.adoc',       formats: ['html','pdf']],
-        //[file: 'arc42-template.adoc',    formats: ['html','pdf']],
+        [file: 'internet-banking-system.adoc', formats: ['html','pdf']],
         /** inputFiles **/
 ]
 
@@ -448,3 +449,35 @@ collectIncludes.with {
     cleanOutputFolder = true // should the output folder be emptied before generation? defailt: false
 }
 //end::collectIncludesConfig[]
+
+// Configuration for Structurizr related tasks
+structurizr = [:]
+
+structurizr.with {
+
+    // Configure where `exportStructurizr` looks for the Structurizr model.
+    workspace = {
+        // The directory in which the Structurizr workspace file is located.
+        path = 'documentation'
+
+        // By default `exportStructurizr` looks for a file '${structurizr.workspace.path}/workspace.dsl'
+        // You can customize this behavior with 'filename'. Note that the workspace filename is provided without '.dsl' extension. 
+        filename = 'bank'
+    }
+
+    export = {
+        // Directory for the exported diagrams.
+        //
+        // WARNING: Do not put manually created/changed files into this directory.
+        // If a valid Structurizr workspace file is found the directory is deleted before the diagram files are generated.
+        outputPath = 'documentation/diagrams'
+
+        // Format of the exported diagrams. Defaults to 'plantuml' if the parameter is not provided.
+        //
+        // Following formats are supported: 
+        // - 'plantuml': the same as 'plantuml/structurizr'
+        // - 'plantuml/structurizr': exports views to PlantUML
+        // - 'plantuml/c4plantuml': exports views to PlantUML with https://github.com/plantuml-stdlib/C4-PlantUML
+        format = 'plantuml'
+    }
+}

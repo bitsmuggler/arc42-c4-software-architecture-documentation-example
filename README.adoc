@@ -30,7 +30,7 @@ For more tech inspiration take a look at the https://www.workingsoftware.dev/doc
 
 [source, bash]
 ----
-docker run -it --rm -v $PWD:/usr/local/structurizr structurizr/cli export -w bank.dsl -format plantuml/structurizr -output documentation/diagrams
+docker run -it --rm -v $PWD:/usr/local/structurizr structurizr/cli export -w documentation/bank.dsl -format plantuml/structurizr -output documentation/diagrams
 ----
 
 ==== With a local installed Structurizr CLI
@@ -46,7 +46,16 @@ Generate the diagrams from the structurizr workspace model
 
 [source, bash]
 ----
-./bin/structurizr-cli/structurizr.sh export -w bank.dsl -format plantuml/structurizr -output documentation/diagrams
+./bin/structurizr-cli/structurizr.sh export -w documentation/bank.dsl -format plantuml/structurizr -output documentation/diagrams
+----
+
+==== With the docToolchain
+
+https://doctoolchain.org/docToolchain/[docToolchain] uses the Structurizr CLI to generate the PlantUML diagrams from the C4 Model described in the Structurizr DSL.
+
+[source, bash]
+----
+./dtcw exportStructurizr
 ----
 
 == Migrate markdown based ADRs from adr-tools to AsciiDoc
