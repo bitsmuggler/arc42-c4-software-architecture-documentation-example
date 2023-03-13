@@ -11,13 +11,13 @@
 
 [plantuml, format=png]   
 ....
-include::../diagrams/structurizr-SignIn.puml[]
+include::../diagrams/SignIn.puml[]
 ....
 
 **Legende**
 [plantuml, format=png, width=50%]   
 ....
-include::../diagrams/structurizr-SignIn-key.puml[]
+include::../diagrams/SignIn-key.puml[]
 ....
 
 

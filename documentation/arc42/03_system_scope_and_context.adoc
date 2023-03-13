@@ -12,13 +12,13 @@
 
 [plantuml, format=png]   
 ....
-include::../diagrams/structurizr-SystemContext.puml[]
+include::../diagrams/SystemContext.puml[]
 ....
 
 **Legende**
 [plantuml, format=png]   
 ....
-include::../diagrams/structurizr-SystemContext-key.puml[]
+include::../diagrams/SystemContext-key.puml[]
 ....
 
 **<Diagram or Table>**

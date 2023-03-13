@@ -12,13 +12,13 @@
 
 [plantuml, format=png]   
 ....
-include::../diagrams/structurizr-LiveDeployment.puml[]
+include::../diagrams/LiveDeployment.puml[]
 ....
 
 **Legende**
 [plantuml, format=png]   
 ....
-include::../diagrams/structurizr-LiveDeployment-key.puml[]
+include::../diagrams/LiveDeployment-key.puml[]
 ....
 
 Motivation::
