@@ -17,10 +17,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-ruby@v1
-      - name: Migrate Markdown based ADRs from adr-tools to AsciiDoc
-        run: gem install kramdown-asciidoc && for f in ./documentation/adrs/*.md; do kramdoc $f; done
       - name: Setup docToolchain
         run: chmod +x dtcw
+      - name: Migrate Markdown based ADRs from adr-tools to AsciiDoc
+        run: ./dtcw exportMarkdown && cp ./build/adrs/*.adoc ./documentation/adrs/
       - name: Generate HTML site
         run: ./dtcw exportStructurizr generateHTML
       - name: Copy documentation to public
