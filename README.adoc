@@ -99,7 +99,7 @@ What becomes easier or more difficult to do and any risks introduced by the chan
 
 [source, bash]
 ----
-for f in ./documentation/adrs/*.md; do docker run -it --rm -v $PWD:/documents asciidoctor/docker-asciidoctor kramdoc $f; done
+./dtcw exportMarkdown && cp ./build/adrs/*.adoc ./documentation/adrs/
 ----
 
 == Generate the software architecture documentation representations
