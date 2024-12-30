@@ -15,7 +15,7 @@
 include::../diagrams/LiveDeployment.puml[]
 ....
 
-**Legende**
+**Legend**
 [plantuml, format=png]   
 ....
 include::../diagrams/LiveDeployment-key.puml[]

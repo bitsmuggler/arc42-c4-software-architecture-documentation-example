@@ -3,8 +3,8 @@ include::arc42/_config.adoc[]
 :doctype: book
 
 = Example Software Architecture Documentation with arc42 and the C4 model
-:revnumber: 8.1 EN
-:revdate: February 2023
+:revnumber: 8.2 EN
+:revdate: January 2023
 :revremark: (based upon AsciiDoc version)
 // toc-title definition MUST follow document title without blank line!
 :toc-title: Table of Contents
@@ -45,8 +45,8 @@ include::arc42/01_introduction_and_goals.adoc[]
 include::arc42/02_architecture_constraints.adoc[]
 
 <<<<
-// 3. System Scope and Context
-include::arc42/03_system_scope_and_context.adoc[]
+// 3. Context and Scope
+include::arc42/03_context_and_scope.adoc[]
 
 <<<<
 // 4. Solution Strategy

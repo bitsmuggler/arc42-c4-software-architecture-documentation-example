@@ -1,5 +1,5 @@
 /*
- * This is a combined version of the following workspaces:
+ * This is a combined version of the following workspaces, with automatic layout enabled:
  *
  * - "Big Bank plc - System Landscape" (https://structurizr.com/share/28201/)
  * - "Big Bank plc - Internet Banking System" (https://structurizr.com/share/36141/)
@@ -9,7 +9,7 @@ workspace "Big Bank plc" "This is an example workspace to illustrate the key fea
     model {
         customer = person "Personal Banking Customer" "A customer of the bank, with personal bank accounts." "Customer"
 
-        enterprise "Big Bank plc" {
+        group "Big Bank plc" {
             supportStaff = person "Customer Service Staff" "Customer service staff within the bank." "Bank Staff"
             backoffice = person "Back Office Staff" "Administration and support staff within the bank." "Bank Staff"
 
@@ -61,7 +61,7 @@ workspace "Big Bank plc" "This is an example workspace to illustrate the key fea
         accountsSummaryController -> mainframeBankingSystemFacade "Uses"
         resetPasswordController -> securityComponent "Uses"
         resetPasswordController -> emailComponent "Uses"
-        securityComponent -> database "Reads from and writes to" "JDBC"
+        securityComponent -> database "Reads from and writes to" "SQL/TCP"
         mainframeBankingSystemFacade -> mainframe "Makes API calls to" "XML/HTTPS"
         emailComponent -> email "Sends e-mail using"
 
@@ -146,6 +146,10 @@ workspace "Big Bank plc" "This is an example workspace to illustrate the key fea
                 email
             }
             autoLayout
+            description "The system context diagram for the Internet Banking System."
+            properties {
+                structurizr.groups false
+            }
         }
 
         container internetBankingSystem "Containers" {
@@ -159,6 +163,7 @@ workspace "Big Bank plc" "This is an example workspace to illustrate the key fea
                 database
             }
             autoLayout
+            description "The container diagram for the Internet Banking System."
         }
 
         component apiApplication "Components" {
@@ -170,6 +175,12 @@ workspace "Big Bank plc" "This is an example workspace to illustrate the key fea
                 resetPasswordController emailComponent
             }
             autoLayout
+            description "The component diagram for the API Application."
+        }
+
+        image mainframeBankingSystemFacade "MainframeBankingSystemFacade" {
+            image https://raw.githubusercontent.com/structurizr/examples/main/dsl/big-bank-plc/internet-banking-system/mainframe-banking-system-facade.png
+            title "[Code] Mainframe Banking System Facade"
         }
 
         dynamic apiApplication "SignIn" "Summarises how the sign in feature works in the single-page application." {
@@ -180,6 +191,7 @@ workspace "Big Bank plc" "This is an example workspace to illustrate the key fea
             securityComponent -> signinController "Returns true if the hashed password matches"
             signinController -> singlePageApplication "Sends back an authentication token to"
             autoLayout
+            description "Summarises how the sign in feature works in the single-page application."
         }
 
         deployment internetBankingSystem "Development" "DevelopmentDeployment" {
@@ -190,6 +202,7 @@ workspace "Big Bank plc" "This is an example workspace to illustrate the key fea
                 developerDatabaseInstance
             }
             autoLayout
+            description "An example development deployment scenario for the Internet Banking System."
         }
 
         deployment internetBankingSystem "Live" "LiveDeployment" {
@@ -202,6 +215,7 @@ workspace "Big Bank plc" "This is an example workspace to illustrate the key fea
                 liveSecondaryDatabaseInstance
             }
             autoLayout
+            description "An example live deployment scenario for the Internet Banking System."
         }
 
         styles {
