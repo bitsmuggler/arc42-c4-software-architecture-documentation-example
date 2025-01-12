@@ -14,6 +14,9 @@ set -o pipefail
 # Set DTC_VERSION to "latest" to get the latest, yet unreleased version.
 : "${DTC_VERSION:=3.4.1}"
 
+# if not set, public docker hub is used
+: "${DTC_DOCKER_PREFIX:=}"
+
 # The 'generateSite' and 'copyThemes' tasks support DTC_SITETHEME, an URL of a theme.
 # export DTC_SITETHEME=https://....zip
 
@@ -22,7 +25,7 @@ set -o pipefail
 # export DTC_TEMPLATE1=https://....zip
 # export DTC_TEMPLATE2=https://....zip
 
-# docToolchain configurtion file may be overruled by the user
+# docToolchain configuration file may be overruled by the user
 : "${DTC_CONFIG_FILE:=docToolchainConfig.groovy}"
 
 # Contains the current project git branch, "-" if not available
@@ -82,7 +85,7 @@ main() {
         install_component_and_exit "${environment}" "${2-}"
     elif [ "${1}" = "getJava" ]; then
         # TODO: remove getJava in the next major release
-        echo "Warning: 'getJava' is deprecated and and will be removed. Use './dtcw install java' instead."
+        echo "Warning: 'getJava' is deprecated and will be removed. Use './dtcw install java' instead."
         install_component_and_exit "${environment}" "java"
     fi
 
@@ -126,7 +129,9 @@ main() {
     fi
 
     # echo "Command to invoke: ${command}"
-    exec ${emu} ${bash} -c "${command}"
+    # shellcheck disable=SC2086
+    # as we hope to know what we are doing here ;-)
+    exec ${emu} ${bash} ${DTC_SHELL_DEBUG:-} -c "${command}"
 }
 
 assert_argument_exists() {
@@ -219,6 +224,11 @@ get_dtc_installations() {
 
     if [ -x "${DTC_HOME}/bin/doctoolchain" ]; then
         installations+=" local"
+    else
+        # maybe it is just available in the path
+        if command -v doctoolchain >/dev/null 2>&1; then
+            installations+=" local"
+        fi
     fi
 
     if [[ "${envs}" =~ sdk ]] && sdk_home_doctoolchain "${version}" &> /dev/null ; then
@@ -624,7 +634,7 @@ build_command() {
         docker_args="run --rm -i --platform linux/amd64 -u $(id -u):$(id -g) --name ${container_name} \
             -e DTC_HEADLESS=true -e DTC_SITETHEME -e DTC_PROJECT_BRANCH=${DTC_PROJECT_BRANCH} \
             ${docker_extra_arguments} ${env_file_option} \
-            --entrypoint /bin/bash -v '${pwd}:/project' ${docker_image}:v${version}"
+            --entrypoint /bin/bash -v '${pwd}:/project' ${DTC_DOCKER_PREFIX}${docker_image}:v${version}"
 
         cmd="docker ${docker_args} -c \"doctoolchain . ${*} ${DTC_OPTS} && exit\""
     else
@@ -634,7 +644,16 @@ build_command() {
             DTC_OPTS="${DTC_OPTS} '-Dgradle.user.home=${DTC_ROOT}/.gradle'"
         fi
         if [ "${env}" = local ]; then
-            cmd="${DTC_HOME}/bin/doctoolchain . ${*} ${DTC_OPTS}"
+            if [ -x "${DTC_HOME}/bin/doctoolchain" ]; then
+                cmd="${DTC_HOME}/bin/doctoolchain"
+            # is doctoolchain available on the path?
+            elif command -v doctoolchain >/dev/null 2>&1; then
+                cmd="doctoolchain"
+            else
+                echo "Could not find doctoolchain executable, neither in '${DTC_HOME}' nor on PATH ('${PATH}')" >&2
+                exit 1
+            fi
+            cmd="${cmd} . ${*} ${DTC_OPTS}"
         else
             cmd="$(sdk_home_doctoolchain "${version}")/bin/doctoolchain . ${*} ${DTC_OPTS}"
         fi

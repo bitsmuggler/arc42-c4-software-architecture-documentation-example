@@ -11,7 +11,6 @@
 [plantuml, format=png]   
 ....
 include::../diagrams/Containers.puml[]
-include::../diagrams/Containers-key.puml[]
 ....
 
 **Legende**
@@ -82,13 +81,13 @@ _<black box template>_
 
 [plantuml, format=png]   
 ....
-include::../diagrams/Components.puml[]
+include::../diagrams/structurizr-Components.puml[]
 ....
 
 **Legende**
 [plantuml, format=png]   
 ....
-include::../diagrams/Components-key.puml[]
+include::../diagrams/structurizr-Components-key.puml[]
 ....
 
 

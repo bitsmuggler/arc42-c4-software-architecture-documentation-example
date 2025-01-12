@@ -9,7 +9,9 @@ It shows how to use the techniques described in https://www.workingsoftware.dev/
 
 Check out the deployed https://bitsmuggler.github.io/arc42-c4-software-architecture-documentation-example/[HTML build] provided on GitHub Pages.
 
-Technologies involved:
+:toc: 
+
+== Technologies
 
 * https://arc42.org/[arc42] to get the structure for the software architecture documentation
 * https://c4model.com/[C4 Model] an "abstraction-first" approach to diagramming software architecture, based upon abstractions that reflect how software architects and developers think about and build software.
@@ -22,43 +24,12 @@ Technologies involved:
 
 For more tech inspiration take a look at the https://www.workingsoftware.dev/documentation-as-code-tools[Documentation as Code Technology Radar]
 
+
 == Prerequisites
 
-=== Generate PlantUML Diagrams from the C4 Model
+=== Migrate markdown based ADRs from adr-tools to AsciiDoc
 
-==== With the Structurizr CLI via Docker Image
-
-[source, bash]
-----
-docker run -it --rm -v $PWD:/usr/local/structurizr structurizr/cli export -w documentation/bank.dsl -format plantuml/structurizr -output documentation/diagrams
-----
-
-==== With a local installed Structurizr CLI
-
-Download the https://github.com/structurizr/cli/releases[structurizr-cli], unzip and move it into `./bin/structurizr-cli` or use the latest Docker Image
-
-[source, bash]
-----
-curl --show-error --location https://github.com/structurizr/cli/releases/download/v{selected-version}/structurizr-cli-{selected-version}.zip  -o tmp.zip && unzip -d bin/structurizr-cli/. tmp.zip && rm tmp.zip
-----
-
-Generate the diagrams from the structurizr workspace model
-
-[source, bash]
-----
-./bin/structurizr-cli/structurizr.sh export -w documentation/bank.dsl -format plantuml/structurizr -output documentation/diagrams
-----
-
-==== With the docToolchain
-
-https://doctoolchain.org/docToolchain/[docToolchain] uses the Structurizr CLI to generate the PlantUML diagrams from the C4 Model described in the Structurizr DSL.
-
-[source, bash]
-----
-./dtcw exportStructurizr
-----
-
-== Migrate markdown based ADRs from adr-tools to AsciiDoc
+Unfortunately, the adr-tools do not support AsciiDoc as a format for the ADRs. Therefore, you have to migrate the existing markdown based ADRs to AsciiDoc.
 
 === Install and configure adr-tools
 
@@ -102,7 +73,18 @@ What becomes easier or more difficult to do and any risks introduced by the chan
 ./dtcw exportMarkdown && cp ./build/adrs/*.adoc ./documentation/adrs/
 ----
 
-== Generate the software architecture documentation representations
+== Build the software architecture documentation
+
+=== Generate PlantUML Diagrams from the C4 Model
+
+https://doctoolchain.org/docToolchain/[docToolchain] uses the Structurizr CLI to generate the PlantUML diagrams from the C4 Model described in the Structurizr DSL.
+
+[source, bash]
+----
+./dtcw exportStructurizr
+----
+
+=== Generate the software architecture documentation representations
 
 NOTE: these examples use the public https://kroki.io[kroki.io] instance to generate the diagrams.
 For your own documentation, replace the references to kroki.io with your own kroki instance.
@@ -126,4 +108,33 @@ Generate the documentation as Microsite
 [source, bash]
 ----
 ./dtcw generateSite
+----
+
+=== Appendix
+
+If you want to build everything without the `./dtcw` script, you can use the following commands.
+
+==== Generate the PlantUML diagrams from the Structurizr DSL
+
+*With the Structurizr CLI via Docker Image*
+
+[source, bash]
+----
+docker run -it --rm -v $PWD:/usr/local/structurizr structurizr/cli export -w documentation/bank.dsl -format plantuml/structurizr -output documentation/diagrams
+----
+
+*With a local installed Structurizr CLI*
+
+* Download the https://github.com/structurizr/cli/releases[structurizr-cli], unzip and move it into `./bin/structurizr-cli` or use the latest Docker Image
+
+[source, bash]
+----
+curl --show-error --location https://github.com/structurizr/cli/releases/download/{selected-version}/structurizr-cli.zip  -o tmp.zip && mkdir -p bin/structurizr-cli && unzip -d bin/structurizr-cli tmp.zip && rm tmp.zip
+----
+
+* Generate the diagrams from the structurizr workspace model
+
+[source, bash]
+----
+./bin/structurizr-cli/structurizr.sh export -w documentation/bank.dsl -format plantuml/structurizr -output documentation/diagrams
 ----

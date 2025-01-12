@@ -4,10 +4,6 @@
 [[section-system-scope-and-context]]
 == System Scope and Context
 
-
-
-
-
 === Business Context
 
 [plantuml, format=png]   

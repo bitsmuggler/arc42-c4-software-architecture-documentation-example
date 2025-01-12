@@ -10,3 +10,4 @@ documentation/images/diag-*.png
 .gradle/
 build/
 documentation/adrs/*.adoc
+c4-language-server.log
