@@ -86,7 +86,7 @@ What becomes easier or more difficult to do and any risks introduced by the chan
 
 == Build the software architecture documentation
 
-=== Generate PlantUML Diagrams from the C4 Model
+=== Generate PlantUML Diagrams from the C4 (Structurizr) Model
 
 https://doctoolchain.org/docToolchain/[docToolchain] uses the Structurizr CLI to generate the PlantUML diagrams from the C4 Model described in the Structurizr DSL.
 
