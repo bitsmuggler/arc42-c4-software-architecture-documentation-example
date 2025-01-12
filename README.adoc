@@ -3,6 +3,8 @@
 
 = Software Architecture Documentation Starter with arc42 and C4 Model
 
+image::banner.png[]
+
 This example shows how to use https://arc42.org/[arc42] in combination with the https://c4model.com/[C4 model] with the Documentation as Code technique.
 
 It shows how to use the techniques described in https://www.workingsoftware.dev/software-architecture-documentation-the-ultimate-guide/[The Ultimate Guide to Software Architecture Documentation].
