@@ -31,7 +31,7 @@ For more tech inspiration take a look at the https://www.workingsoftware.dev/doc
 
 Unfortunately, the adr-tools do not support AsciiDoc as a format for the ADRs. Therefore, you have to migrate the existing markdown based ADRs to AsciiDoc.
 
-=== Install and configure adr-tools
+==== Install and configure adr-tools
 
 . Install https://github.com/npryce/adr-tools[adr-tools]
 . Configure the adr template with the following header config
@@ -66,7 +66,7 @@ The change that we're proposing or have agreed to implement.
 What becomes easier or more difficult to do and any risks introduced by the change that will need to be mitigated.
 ----
 
-=== Migrate the generated markdown based decisions with the docker-asciidoctor image under Linux
+==== Migrate the generated markdown based decisions with the docker-asciidoctor image under Linux
 
 [source, bash]
 ----
