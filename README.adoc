@@ -7,9 +7,15 @@ This example shows how to use https://arc42.org/[arc42] in combination with the 
 
 It shows how to use the techniques described in https://www.workingsoftware.dev/software-architecture-documentation-the-ultimate-guide/[The ultimate Guide to Software Architecture Documentation].
 
-Check out the deployed https://bitsmuggler.github.io/arc42-c4-software-architecture-documentation-example/[HTML build] provided on GitHub Pages.
+Check out the deployed https://bitsmuggler.github.io/arc42-c4-software-architecture-documentation-example/[example HTML build] provided on GitHub Pages.
 
-:toc: 
+Go through the following steps:
+
+. <<Prerequisites>>
+. <<Build the software architecture documentation>>
+.. <<Generate PlantUML Diagrams from the C4 (Structurizr) Model>>
+.. <<Generate the software architecture documentation representations>>
+
 
 == Technologies
 
