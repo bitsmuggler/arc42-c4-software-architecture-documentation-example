@@ -27,6 +27,8 @@ For more tech inspiration take a look at the https://www.workingsoftware.dev/doc
 
 == Prerequisites
 
+If you don't plan to use the https://github.com/npryce/adr-tools[adr-tools], you can skip this step.
+
 === Migrate markdown based ADRs from adr-tools to AsciiDoc
 
 Unfortunately, the adr-tools do not support AsciiDoc as a format for the ADRs. Therefore, you have to migrate the existing markdown based ADRs to AsciiDoc.
