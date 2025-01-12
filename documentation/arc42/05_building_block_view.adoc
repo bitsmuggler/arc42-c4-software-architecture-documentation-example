@@ -81,13 +81,13 @@ _<black box template>_
 
 [plantuml, format=png]   
 ....
-include::../diagrams/structurizr-Components.puml[]
+include::../diagrams/Components.puml[]
 ....
 
 **Legende**
 [plantuml, format=png]   
 ....
-include::../diagrams/structurizr-Components-key.puml[]
+include::../diagrams/Components-key.puml[]
 ....
 
 
