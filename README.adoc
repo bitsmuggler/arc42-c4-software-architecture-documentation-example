@@ -46,7 +46,7 @@ The ADR template is based on Markdown and the ADR chapters must be adapted to th
 
 . Install https://github.com/npryce/adr-tools[adr-tools]
 . Get the path of the adr template of the adr-tools via `adr config`
-. Replace the content of the `template.md` file with the content of the link:./adr-template.md[adr-teplate.md] file of this repository.
+. Replace the content of the `template.md` file with the content of the link:./adr-template.md[adr-template.md] file of this repository.
 
 ==== Migrate the generated markdown based decisions with docToolchain
 
