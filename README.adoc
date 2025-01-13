@@ -40,46 +40,17 @@ For more tech inspiration take a look at the https://www.workingsoftware.dev/doc
 If you don't plan to use the https://github.com/npryce/adr-tools[adr-tools], you can skip this step. Please make sure that Chapter 09 Architecture Decisions does not contain any references to the ADRs.
 ====
 
-=== Migrate markdown based ADRs from adr-tools to AsciiDoc
+=== Install adr-tools and adjust the ADR template
 
-Unfortunately, the adr-tools do not support AsciiDoc as a format for the ADRs. Therefore, you have to migrate the existing markdown based ADRs to AsciiDoc.
-
-==== Install and configure adr-tools
+The ADR template is based on Markdown and the ADR chapters must be adapted to the chapter levels of the arc42 template.
 
 . Install https://github.com/npryce/adr-tools[adr-tools]
-. Configure the adr template with the following header config
+. Get the path of the adr template of the adr-tools via `adr config`
+. Replace the content of the `template.md` file with the content of the link:./adr-template.adoc[adr-teplate.adoc] file of this repository.
 
-[source, bash]
-----
-adr config
-----
+==== Migrate the generated markdown based decisions with docToolchain
 
-Replace the content of the `template.md` file with the following content:
-
-[source, markdown]
-----
-### TITLE
-
-Date: DATE
-
-#### Status
-
-STATUS
-
-#### Context
-
-The issue motivating this decision, and any context that influences or constrains the decision.
-
-#### Decision
-
-The change that we're proposing or have agreed to implement.
-
-#### Consequences
-
-What becomes easier or more difficult to do and any risks introduced by the change that will need to be mitigated.
-----
-
-==== Migrate the generated markdown based decisions with the docker-asciidoctor image under Linux
+If you have already generated ADRs with the adr-tools, you can migrate them to the AsciiDoc format with the following steps.
 
 [source, bash]
 ----
