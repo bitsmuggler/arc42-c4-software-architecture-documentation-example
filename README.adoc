@@ -9,10 +9,7 @@ This example shows how to use https://arc42.org/[arc42] in combination with the 
 
 It shows how to use the techniques described in https://www.workingsoftware.dev/software-architecture-documentation-the-ultimate-guide/[The Ultimate Guide to Software Architecture Documentation].
 
-.A Step-By-Step Walkthrough on Youtube
-++++
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TLcUISoEn2s?si=_Ex8mHEs2yuJkrqc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-++++
+If you're looking for a step-by-step video on how to use this starter project, you can find it on youtube here: https://www.youtube.com/watch?v=TLcUISoEn2s[Software Architecture Documentation with arc42 and C4 Model - A Step-By-Step Walkthrough on Youtube]
 
 Check out the deployed https://bitsmuggler.github.io/arc42-c4-software-architecture-documentation-example/[example HTML build] provided on GitHub Pages.
 
