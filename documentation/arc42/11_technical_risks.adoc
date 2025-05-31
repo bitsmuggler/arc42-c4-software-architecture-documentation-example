@@ -1,7 +1,7 @@
 [[section-technical-risks]]
 == Risks and Technical Debts
 
-=== Technical Debt Records
+=== Technical Debts
 
 include::../tdrs/0001-debt-1.adoc[]
 

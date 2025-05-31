@@ -32,6 +32,7 @@ Go through the following steps:
 * https://doctoolchain.org[docToolchain] to automate the generation of the software architecture documentation.
 * https://kroki.io[Kroki] to generate diagrams
 * https://github.com/npryce/adr-tools[adr-tools] to generate and manage Architecture Decision Records (ADRs)
+* 
 
 For more tech inspiration take a look at the https://www.workingsoftware.dev/documentation-as-code-tools[Documentation as Code Technology Radar].
 
