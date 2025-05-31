@@ -1,13 +1,13 @@
-=== TDR 2: Debt 2
+==== TDR 2: Debt 2
 
 Date: 2025-05-31
 
-==== Status
+===== Status
 
-==== Description
+===== Description
 
-==== Impact
+===== Impact
 
-==== Possible Solutions
+===== Possible Solutions
 
-==== Owner
+===== Owner
