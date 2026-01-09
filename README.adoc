@@ -1,5 +1,7 @@
-:selected-version: 1.25.0
 :icons: font
+:toc: left
+:toclevels: 3
+:toc-title: Inhalt
 
 = Software Architecture Documentation Starter with arc42 and C4 Model
 
@@ -9,32 +11,60 @@ This example shows how to use https://arc42.org/[arc42] in combination with the 
 
 It shows how to use the techniques described in https://www.workingsoftware.dev/software-architecture-documentation-the-ultimate-guide/[The Ultimate Guide to Software Architecture Documentation].
 
-If you're looking for a step-by-step video on how to use this starter project, you can find it on Youtube here: https://www.youtube.com/watch?v=TLcUISoEn2s
+video::TLcUISoEn2s[youtube, title="Step-by-step video tutorial"]
 
 Check out the deployed https://bitsmuggler.github.io/arc42-c4-software-architecture-documentation-example/[example HTML build] provided on GitHub Pages.
 
-Go through the following steps:
+== Quick Start
 
-. <<Prerequisites>>
-. <<Build the software architecture documentation>>
-.. <<Generate PlantUML Diagrams from the C4 (Structurizr) Model>>
-.. <<Generate the software architecture documentation representations>>
+Get started in 3 simple steps:
+
+[source, bash]
+----
+# 1. Generate diagrams from C4 model
+./dtcw exportStructurizr
+
+# 2. Build HTML documentation
+./dtcw generateHTML
+
+# 3. Open the result
+open build/html5/internet-banking-system.html
+----
+
+For more details, see <<Build the software architecture documentation>>
 
 
-== Technologies
+== Techniques & Technologies
 
-* https://arc42.org/[arc42] to get the structure for the software architecture documentation
-* https://c4model.com/[C4 Model] an "abstraction-first" approach to diagramming software architecture, based upon abstractions that reflect how software architects and developers think about and build software.
-* https://structurizr.com/dsl[Structurizr DSL] to describe the https://c4model.com/[C4 Model] of the software system
-* https://github.com/structurizr/cli[Structurizr CLI] a command line utility for Structurizr to export the https://plantuml.com/[PlantUML] diagrams from the C4 Model described in the Structurizr DSL
-* https://asciidoc.org/[AsciiDoc] as format to write the software architecture documentation
-* https://asciidoctor.org/[Asciidoctor] to generate the representations of the software architecture documentation written in AsciiDoc.
-* https://doctoolchain.org[docToolchain] to automate the generation of the software architecture documentation.
-* https://kroki.io[Kroki] to generate diagrams
-* https://github.com/npryce/adr-tools[adr-tools] to generate and manage Architecture Decision Records (ADRs)
-* https://www.workingsoftware.dev/technical-debt-records/[Technical Debt Records] to record technical debts (TDRs)
+=== Documentation
 
-For more tech inspiration take a look at the https://www.workingsoftware.dev/documentation-as-code-tools[Documentation as Code Technology Radar].
+[cols="1,3"]
+|===
+|https://arc42.org/[arc42] |Structure template for software architecture documentation
+|https://asciidoc.org/[AsciiDoc] |Markup format for writing documentation
+|https://asciidoctor.org/[Asciidoctor] |Processor to generate HTML, PDF and other formats
+|===
+
+=== Architecture Modeling
+
+[cols="1,3"]
+|===
+|https://c4model.com/[C4 Model] |Abstraction-first approach to diagramming software architecture
+|https://structurizr.com/dsl[Structurizr DSL] |DSL to describe C4 models as code
+|https://github.com/structurizr/cli[Structurizr CLI] |CLI to export PlantUML diagrams from Structurizr DSL
+|===
+
+=== Tooling & Automation
+
+[cols="1,3"]
+|===
+|https://doctoolchain.org[docToolchain] |Automation for generating documentation
+|https://kroki.io[Kroki] |Diagram generation service
+|https://github.com/npryce/adr-tools[adr-tools] |Generate and manage Architecture Decision Records (ADRs)
+|https://www.workingsoftware.dev/technical-debt-records/[Technical Debt Records] |Record and track technical debts (TDRs)
+|===
+
+TIP: For more tech inspiration take a look at the https://www.workingsoftware.dev/documentation-as-code-tools[Documentation as Code Technology Radar].
 
 == Prerequisites
 
@@ -62,46 +92,39 @@ If you have already generated ADRs with the adr-tools, you can migrate them to t
 
 == Build the software architecture documentation
 
-=== Generate PlantUML Diagrams from the C4 (Structurizr) Model
+=== Available Commands
 
-https://doctoolchain.org/docToolchain/[docToolchain] uses the Structurizr CLI to generate the PlantUML diagrams from the C4 Model described in the Structurizr DSL.
+https://doctoolchain.org/docToolchain/[docToolchain] provides the following commands via the `./dtcw` wrapper script:
 
-[source, bash]
-----
-./dtcw exportStructurizr
-----
+[cols="2,3"]
+|===
+|Command |Description
 
-=== Generate the software architecture documentation representations
+|`./dtcw exportStructurizr`
+|Generate PlantUML diagrams from the C4 Model (Structurizr DSL)
 
-NOTE: these examples use the public https://kroki.io[kroki.io] instance to generate the diagrams.
+|`./dtcw generateHTML`
+|Generate HTML documentation
+
+|`./dtcw generatePDF`
+|Generate PDF documentation
+
+|`./dtcw generateSite`
+|Generate documentation as Microsite
+
+|`./dtcw exportMarkdown`
+|Convert Markdown ADRs to AsciiDoc
+|===
+
+NOTE: These examples use the public https://kroki.io[kroki.io] instance to generate the diagrams.
 For your own documentation, replace the references to kroki.io with your own kroki instance.
 
-Generate the documentation as HTML representation
-
-[source, bash]
-----
-./dtcw generateHTML
-----
-
-Generate the documentation as PDF representation
-
-[source, bash]
-----
-./dtcw generatePDF
-----
-
-Generate the documentation as Microsite
-
-[source, bash]
-----
-./dtcw generateSite
-----
-
-=== Appendix
+[appendix]
+== Manual Setup (without dtcw)
 
 If you want to build everything without the `./dtcw` script, you can use the following commands.
 
-==== Generate the PlantUML diagrams from the Structurizr DSL
+=== Generate the PlantUML diagrams from the Structurizr DSL
 
 *With the Structurizr CLI via Docker Image*
 
@@ -116,7 +139,7 @@ docker run -it --rm -v $PWD:/usr/local/structurizr structurizr/cli export -w doc
 
 [source, bash]
 ----
-curl --show-error --location https://github.com/structurizr/cli/releases/download/{selected-version}/structurizr-cli.zip  -o tmp.zip && mkdir -p bin/structurizr-cli && unzip -d bin/structurizr-cli tmp.zip && rm tmp.zip
+curl --show-error --location https://github.com/structurizr/cli/releases/download/v2025.11.09/structurizr-cli.zip  -o tmp.zip && mkdir -p bin/structurizr-cli && unzip -d bin/structurizr-cli tmp.zip && rm tmp.zip
 ----
 
 * Generate the diagrams from the structurizr workspace model
@@ -125,3 +148,11 @@ curl --show-error --location https://github.com/structurizr/cli/releases/downloa
 ----
 ./bin/structurizr-cli/structurizr.sh export -w documentation/bank.dsl -format plantuml/structurizr -output documentation/diagrams
 ----
+
+== License
+
+This project is open source. Feel free to use it as a starting point for your own software architecture documentation.
+
+== Contributing
+
+Contributions are welcome! Please feel free to submit issues or pull requests.

@@ -12,7 +12,7 @@ set -o pipefail
 
 # See https://github.com/docToolchain/docToolchain/releases for available versions.
 # Set DTC_VERSION to "latest" to get the latest, yet unreleased version.
-: "${DTC_VERSION:=3.4.1}"
+: "${DTC_VERSION:=3.4.2}"
 
 # if not set, public docker hub is used
 : "${DTC_DOCKER_PREFIX:=}"
@@ -37,7 +37,10 @@ export DTC_PROJECT_BRANCH
 export DTC_HEADLESS
 
 # Options passed to docToolchain
-DTC_OPTS="${DTC_OPTS:-} -PmainConfigFile=${DTC_CONFIG_FILE} --warning-mode=none --no-daemon -Dfile.encoding=UTF-8 "
+DTC_OPTS="${DTC_OPTS:-} --warning-mode=none --no-daemon -Dfile.encoding=UTF-8 "
+if [ -n "${DTC_CONFIG_FILE}" ]; then
+    DTC_OPTS="${DTC_OPTS} -PmainConfigFile=${DTC_CONFIG_FILE}"
+fi
 
 # Here you find the project
 GITHUB_PROJECT_URL=https://github.com/docToolchain/docToolchain
@@ -487,7 +490,7 @@ assert_java_version_supported() {
     java_version=$(echo "$java_version" | awk -F '"' '/version/ {print $0}' | head -1 | cut -d'"' -f2)
     major_version=$(echo "$java_version" | sed '/^1\./s///' | cut -d'.' -f1)
 
-    if [ "${major_version}" -ge 11 ] && [ "${major_version}" -le 17 ]; then
+    if [ "${major_version}" -eq 17 ]; then
         echo "Using Java ${java_version} [${JAVA_CMD}]"
         return
     fi
@@ -498,8 +501,8 @@ assert_java_version_supported() {
 
 java_help_and_die() {
     printf "%s\n" \
-        "docToolchain supports Java versions 11, 14, or 17 (preferred). In case one of those" \
-        "Java versions is installed make sure 'java' is found with your PATH environment" \
+        "docToolchain supports Java version 17 only. In case that" \
+        "Java version is installed make sure 'java' is found with your PATH environment" \
         "variable. As alternative you may provide the location of your Java installation" \
         "with JAVA_HOME." \
         "" \
@@ -516,7 +519,7 @@ java_help_and_die() {
     fi
     # TODO: This will break when we change Java version
     printf "%s\n" \
-        "    $ sdk install java 17.0.7-tem" \
+        "    $ sdk install java 17.0.14-tem" \
         "" \
         "If you prefer not to install Java on your host, you can run docToolchain in a" \
         "docker container. For this case dtcw provides the 'docker' execution environment." \
@@ -602,7 +605,7 @@ how_to_install_doctoolchain() {
         "    \$ sdk install doctoolchain ${version}" \
         "" \
         "Note that running docToolchain in 'local' or 'sdk' environment needs a" \
-        "Java runtime (major version 11, 14, or 17) installed on your host." \
+        "Java runtime major version 17 installed on your host." \
         "" \
         "3. 'docker': pull the docToolchain image and execute docToolchain in a container environment." \
         "" \
