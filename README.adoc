@@ -135,14 +135,14 @@ docker run -it --rm -v $PWD:/usr/local/structurizr structurizr/cli export -w doc
 
 *With a local installed Structurizr CLI*
 
-* Download the https://github.com/structurizr/cli/releases[structurizr-cli], unzip and move it into `./bin/structurizr-cli` or use the latest Docker Image
+Download the https://github.com/structurizr/cli/releases[structurizr-cli], unzip and move it into `./bin/structurizr-cli` or use the latest Docker Image
 
 [source, bash]
 ----
 curl --show-error --location https://github.com/structurizr/cli/releases/download/v2025.11.09/structurizr-cli.zip  -o tmp.zip && mkdir -p bin/structurizr-cli && unzip -d bin/structurizr-cli tmp.zip && rm tmp.zip
 ----
 
-* Generate the diagrams from the structurizr workspace model
+Generate the diagrams from the structurizr workspace model
 
 [source, bash]
 ----
