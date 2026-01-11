@@ -5,13 +5,13 @@
 
 === Internet Banking System
 
-[plantuml, format=png]   
+[plantuml, format=svg]   
 ....
 include::../diagrams/Containers.puml[]
 ....
 
 **Legende**
-[plantuml, format=png]   
+[plantuml, format=svg]   
 ....
 include::../diagrams/Containers-key.puml[]
 ....
@@ -76,13 +76,13 @@ _<black box template>_
 
 ==== White Box API Application
 
-[plantuml, format=png]   
+[plantuml, format=svg]   
 ....
 include::../diagrams/Components.puml[]
 ....
 
 **Legende**
-[plantuml, format=png]   
+[plantuml, format=svg]   
 ....
 include::../diagrams/Components-key.puml[]
 ....

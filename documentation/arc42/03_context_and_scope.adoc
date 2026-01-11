@@ -3,13 +3,13 @@
 
 === Business Context
 
-[plantuml, format=png]   
+[plantuml, format=svg]   
 ....
 include::../diagrams/SystemContext.puml[]
 ....
 
 **Legende**
-[plantuml, format=png]   
+[plantuml, format=svg]   
 ....
 include::../diagrams/SystemContext-key.puml[]
 ....

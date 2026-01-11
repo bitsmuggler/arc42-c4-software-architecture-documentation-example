@@ -10,13 +10,13 @@
 
 === Infrastructure Level 1
 
-[plantuml, format=png]   
+[plantuml, format=svg]   
 ....
 include::../diagrams/LiveDeployment.puml[]
 ....
 
 **Legend**
-[plantuml, format=png]   
+[plantuml, format=svg]   
 ....
 include::../diagrams/LiveDeployment-key.puml[]
 ....

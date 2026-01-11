@@ -6,13 +6,13 @@
 
 === Sign-In
 
-[plantuml, format=png]   
+[plantuml, format=svg]   
 ....
 include::../diagrams/SignIn.puml[]
 ....
 
 **Legende**
-[plantuml, format=png, width=50%]   
+[plantuml, format=svg, width=50%]   
 ....
 include::../diagrams/SignIn-key.puml[]
 ....
