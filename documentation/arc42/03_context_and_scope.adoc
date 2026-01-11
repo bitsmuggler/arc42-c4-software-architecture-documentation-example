@@ -3,24 +3,21 @@
 
 === Business Context
 
-[plantuml, format=svg]   
+[plantuml, format=svg, width=70%]
 ....
 include::../diagrams/SystemContext.puml[]
 ....
 
 **Legende**
-[plantuml, format=svg]   
+
+[plantuml, format=svg, width=50%]
 ....
 include::../diagrams/SystemContext-key.puml[]
 ....
 
-**<Diagram or Table>**
-
-**<optionally: Explanation of external domain interfaces>**
+<<<
 
 === Technical Context
-
-
 
 **<Diagram or Table>**
 

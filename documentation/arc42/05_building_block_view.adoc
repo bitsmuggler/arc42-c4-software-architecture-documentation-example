@@ -1,27 +1,23 @@
 [[section-building-block-view]]
 == Building Block View
 
-
-
 === Internet Banking System
 
-[plantuml, format=svg]   
+[plantuml, format=svg, width=70%]   
 ....
 include::../diagrams/Containers.puml[]
 ....
 
 **Legende**
-[plantuml, format=svg]   
+[plantuml, format=svg, width=50%]   
 ....
 include::../diagrams/Containers-key.puml[]
 ....
 
-
-
 _**<Overview Diagram>**_
 
+<<<
 Motivation::
-
 _<text explanation>_
 
 
@@ -32,7 +28,7 @@ Important Interfaces::
 _<Description of important interfaces>_
 
 
-
+<<<
 
 ==== <Name black box 1>
 
@@ -68,27 +64,27 @@ _<black box template>_
 
 ==== <Name interface m>
 
-
+<<<
 
 === Level 2
 
-
-
 ==== White Box API Application
 
-[plantuml, format=svg]   
+[plantuml, format=svg, width=70%]   
 ....
 include::../diagrams/Components.puml[]
 ....
 
 **Legende**
-[plantuml, format=svg]   
+[plantuml, format=svg, width=50%]   
 ....
 include::../diagrams/Components-key.puml[]
 ....
 
 
 _<white box template>_
+
+<<<
 
 ==== White Box _<building block 2>_
 
@@ -102,7 +98,7 @@ _<white box template>_
 
 _<white box template>_
 
-
+<<<
 
 === Level 3
 

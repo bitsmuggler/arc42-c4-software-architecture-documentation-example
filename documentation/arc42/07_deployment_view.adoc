@@ -7,16 +7,15 @@
 == Deployment View
 
 
-
 === Infrastructure Level 1
 
-[plantuml, format=svg]   
+[plantuml, format=svg, width=50%]   
 ....
 include::../diagrams/LiveDeployment.puml[]
 ....
 
 **Legend**
-[plantuml, format=svg]   
+[plantuml, format=svg, width=50%]   
 ....
 include::../diagrams/LiveDeployment-key.puml[]
 ....
@@ -32,6 +31,8 @@ _<explanation in text form>_
 Mapping of Building Blocks to Infrastructure::
 _<description of the mapping>_
 
+
+<<<
 
 === Infrastructure Level 2
 
