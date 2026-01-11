@@ -1,6 +1,3 @@
-:diagram-server-url: https://kroki.io
-:diagram-server-type: kroki_io
-
 [[section-building-block-view]]
 == Building Block View
 

@@ -1,8 +1,5 @@
-:diagram-server-url: https://kroki.io
-:diagram-server-type: kroki_io
-
-[[section-system-scope-and-context]]
-== System Scope and Context
+[[section-context-and-context]]
+== Context and Scope
 
 === Business Context
 
